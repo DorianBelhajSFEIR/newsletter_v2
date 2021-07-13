@@ -10,564 +10,487 @@
       rel="stylesheet"
     />
     <style>
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: "Work Sans", sans-serif;
-      }
-      header {
-        background: linear-gradient(90deg, #1a95c2 40%, #0067c7 100%);
-        height: 60px;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin: 0;
-      }
-      h1 {
-        font-size: 40px;
-        margin: 0 12px;
-      }
-      hr {
-        border: 1px solid #ddd;
-        width: 100%;
-        margin: 0;
-      }
-      section {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        grid-gap: 40px;
-      }
-      button {
-        border-radius: 4px;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      .category {
-        font-size: 12px;
-        border-radius: 27px;
-        padding: 5px 10px;
-        color: #f19101;
-        border: 1px solid #f19101;
-      }
-      .avatar_wrapper {
-        display: flex;
-        border-style: solid;
-        border-radius: 50%;
-      }
-      .offer_help .avatar_wrapper,
-      .offer_help .category {
-        border-color: #24acac;
-        color: #24acac;
-      }
-      .need_help .avatar_wrapper,
-      .need_help .category {
-        border-color: #f19101;
-        color: #f19101;
-      }
-      .avatar {
-        flex: 1;
-        border-style: solid;
-        border-color: white;
-        background-size: 100% 100%;
-        border-radius: 50%;
-      }
-      .newsletter_content {
-        display: flex;
-        flex-direction: column;
-        grid-gap: 50px;
-        max-width: 730px;
-        align-items: stretch;
-        margin: 50px auto;
-      }
-      .section_title {
-        display: flex;
-        align-self: center;
-      }
-      .bubble {
-        height: 50px;
-        width: 50px;
-        background-size: 100% 100%;
-      }
-      .bubble.orange_left {
-        background-image: url("./assets/bubble/orange_left.png");
-      }
-      .bubble.orange_right {
-        background-image: url("./assets/bubble/orange_right.png");
-      }
-      .bubble.green_left {
-        background-image: url("./assets/bubble/green_left.png");
-      }
-      .bubble.green_right {
-        background-image: url("./assets/bubble/green_right.png");
-      }
-      .bubble.blue_left {
-        background-image: url("./assets/bubble/blue_left.png");
-      }
-      .bubble.blue_right {
-        background-image: url("./assets/bubble/blue_right.png");
-      }
-      .suggestion_card {
-        position: relative;
-        background: url("./assets/bubble_bg_card.png"),
-          linear-gradient(278.25deg, #f19101 22.89%, #e7a542 62.97%);
-        background-size: cover;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        grid-gap: 5px;
-      }
-      .suggestion_card h2 {
-        font-weight: 500;
-        font-size: 26px;
-        color: white;
-      }
-      .suggestion_card button {
-        background-color: white;
-        border: none;
-        padding: 12px 52px;
-      }
-      .suggestion_card .bubbles {
-        position: absolute;
-        z-index: 0;
-        left: 0;
-        right: 0;
-        top: 33%;
-      }
-      .bubbles .bubble_left {
-        position: absolute;
-        background-image: url("./assets/bubble_card_left.png");
-        background-size: 125% 100%;
-        width: 50px;
-        height: 170px;
-        left: -15px;
-      }
-      .bubbles .bubble_right {
-        position: absolute;
-        background-image: url("./assets/bubble_card_right.png");
-        background-size: 125% 100%;
-        width: 60px;
-        height: 170px;
-        right: 0;
-      }
-      .need_help.suggestion_card button {
-        color: #f19101;
-      }
-      .suggestion_bubble {
-        background-image: url("./assets/bubble.png");
-        background-size: 100% 100%;
-        width: 310px;
-        height: 310px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .suggestion_bubble h3 {
-        font-size: 16px;
-        line-height: 19px;
-      }
-      .suggestion_bubble span {
-        line-height: 12px;
-        font-size: 10px;
-      }
-      .suggestion_bubble .avatar_wrapper {
-        width: 120px;
-        height: 120px;
-        border-width: 4px;
-        margin-bottom: 10px;
-      }
-      .suggestion_bubble .avatar {
-        background-image: url("./assets/ccas_avatar.png");
-        border-width: 4px;
-      }
-      .suggestion_bubble .category {
-        margin-top: 10px;
-      }
-      .publications {
-        display: flex;
-        grid-gap: 30px;
-      }
-      .publication {
-        flex: 1;
-        display: flex;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-      }
-      .publication .content {
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        grid-gap: 20px;
-        align-items: stretch;
-        flex: 1;
-        border-left-width: 10px;
-        border-left-style: solid;
-      }
-      .publication .content .category {
-        align-self: baseline;
-      }
-      .publication.need_help .content {
-        border-left-color: #f19101;
-      }
-      .publication.offer_help .content {
-        border-left-color: #24acac;
-      }
-      .publication_header {
-        display: flex;
-        grid-gap: 8px;
-      }
-      .publication_header .avatar {
-        flex: inherit;
-        width: 36px;
-        height: 36px;
-        background-image: url("./assets/publication_avatar.png");
-        background-size: 100% 100%;
-      }
-      .publication_header .data {
-        flex: 1;
-        line-height: 14px;
-      }
-      .publication_header .data .author {
-        font-size: 16px;
-        font-weight: 700;
-      }
-      .publication_header .data .status {
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 14px;
-      }
-      .publication_header .data .date {
-        font-size: 12px;
-        font-weight: 400;
-        color: #747474;
-      }
-      .publication.need_help .publication_header .data .status {
-        color: #f19101;
-      }
-      .publication.offer_help .publication_header .data .status {
-        color: #24acac;
-      }
-      .publication_btn {
-        padding: 15px;
-        color: white;
-        border: none;
-        font-size: 10px;
-      }
-      .need_help .publication_btn,
-      .need_help .category_number {
-        background-color: #f19101;
-      }
-      .offer_help .publication_btn,
-      .offer_help .category_number {
-        background-color: #24acac;
-      }
-      .see_more_btn {
-        background-color: white;
-        padding: 24px;
-      }
-      .see_more_btn.green {
-        border: 1px solid #24acac;
-        color: #24acac;
-      }
-      .see_more_btn.blue {
-        border: 1px solid #1a95c2;
-        color: #1a95c2;
-      }
-      .text {
-        color: #737272;
-      }
-      .neighbor_grid {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: 50% 50%;
-      }
-      .neighbor_card {
-        border-radius: 10px;
-        padding: 25px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        display: grid;
-        grid-gap: 15px;
-      }
-      .card_header {
-        display: grid;
-        grid-template-areas:
-          "avatar name"
-          "avatar categories";
-        grid-gap: 10px;
-        grid-template-columns: 70px auto;
-      }
-      .card_header .avatar_wrapper {
-        grid-area: avatar;
-      }
-      .card_header .avatar {
-        background-image: url("./assets/card_avatar.png");
-      }
-      .card_data {
-        grid-area: name;
-        font-size: 14px;
-        font-weight: 700;
-      }
-      .card_categories {
-        grid-area: categories;
-        display: flex;
-        grid-gap: 8px;
-      }
-      .category_number {
-        border-radius: 50%;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 27px;
-        font-size: 12px;
-        font-weight: 700;
-      }
-      .sn_icons {
-        display: flex;
-        flex: 1;
-        justify-content: space-between;
-      }
-      .sn_icon {
-        width: 72px;
-        height: 72px;
-        background-size: 100% 100%;
-      }
-      .sn_icon.website {
-        background-image: url("./assets/sn_icons/website.png");
-      }
-      .sn_icon.linkedin {
-        background-image: url("./assets/sn_icons/linkedin.png");
-      }
-      .sn_icon.facebook {
-        background-image: url("./assets/sn_icons/facebook.png");
-      }
-      .sn_icon.instagram {
-        background-image: url("./assets/sn_icons/instagram.png");
-      }
-      .sn_icon.twitter {
-        background-image: url("./assets/sn_icons/twitter.png");
-      }
-      footer {
-        max-width: 730px;
-        margin: auto;
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: #747474;
-      }
+      /* table {
+        border: 2px solid black;
+      }
+      tr{
+        border: 1px solid blue;
+      }
+      td{
+        border: 1px solid red;
+      } */
     </style>
   </head>
-  <body>
-    <header>Ouvrir sur navigateur</header>
-    <div class="newsletter_content">
-      <section id="city_suggestion">
-        <div class="section_title">
-          <div class="bubble orange_left"></div>
-          <h1>Votre ville a besoin de vous !</h1>
-          <div class="bubble orange_right"></div>
-        </div>
-        <div class="suggestion_card need_help">
-          <h2>
-            Offrez un peu de temps pour aider <br />
-            Odile à faire ses courses.
-          </h2>
-          <div class="suggestion_bubble">
-            <div class="avatar_wrapper">
-              <div class="avatar"></div>
-            </div>
-            <h3>Odile, 88 ans, Aubervilliers</h3>
-            <span>a besoin d'aide pour</span>
-            <div class="category">Faire les courses</div>
-          </div>
-          <button>Je propose mon aide</button>
-          <div class="bubbles">
-            <div class="bubble_left"></div>
-            <div class="bubble_right"></div>
-          </div>
-        </div>
-      </section>
-      <section id="new_publications">
-        <div class="section_title">
-          <div class="bubble green_left"></div>
-          <h1>Du nouveau sur le réseau</h1>
-          <div class="bubble green_right"></div>
-        </div>
-        <div class="publications">
-          <div class="publication need_help">
-            <div class="content">
-              <div class="publication_header">
-                <div class="avatar"></div>
-                <div class="data">
-                  <span class="author">Rébecca, 38 ans, Aubervilliers</span
-                  ><br />
-                  <span class="status">Demande un coup de main</span><br />
-                  <span class="date">le 12 janvier</span>
-                </div>
-                <div class="menu"></div>
-              </div>
-              <div class="category">Plomberie</div>
-              <div class="text">
-                <span>
-                  Bonjour, je suis à la recherche de quelqu’un qui pourrait
-                  m’aider. Je souhaite faire un raccord en...
-                  <br /><strong>Voir plus</strong>
-                </span>
-              </div>
-              <hr />
-              <button class="publication_btn">
-                Proposer mon aide à Rébecca
-              </button>
-            </div>
-          </div>
-          <div class="publication offer_help">
-            <div class="content">
-              <div class="publication_header">
-                <div class="avatar"></div>
-                <div class="data">
-                  <span class="author">Rébecca, 38 ans, Aubervilliers</span
-                  ><br />
-                  <span class="status">Propose de l'aide</span><br />
-                  <span class="date">le 12 janvier</span>
-                </div>
-                <div class="menu"></div>
-              </div>
-              <div class="category">Plomberie</div>
-              <div class="text">
-                <span>
-                  Bonjour, je suis à la recherche de quelqu’un qui pourrait
-                  m’aider. Je souhaite faire un raccord en...
-                  <br /><strong>Voir plus</strong>
-                </span>
-              </div>
-              <hr />
-              <button class="publication_btn">
-                Proposer mon aide à Rébecca
-              </button>
-            </div>
-          </div>
-        </div>
-        <button class="see_more_btn green">VOIR 12 PUBLICATIONS DE PLUS</button>
-      </section>
-      <section id="neighbor_suggestions">
-        <div class="section_title">
-          <div class="bubble blue_left"></div>
-          <h1>Vous pouvez vous entraider</h1>
-          <div class="bubble blue_right"></div>
-        </div>
-        <div class="neighbor_grid">
-          <div class="neighbor_card need_help">
-            <div class="card_header">
-              <div class="avatar_wrapper">
-                <div class="avatar"></div>
-              </div>
-              <div class="card_data">
-                <div class="card_user">
-                  <span>Jeanne, 45 ans,<br />Aubervilliers</span>
-                </div>
-                <div class="confirmed"></div>
-              </div>
-              <div class="card_categories">
-                <div class="category">Garder les animaux</div>
-                <div class="category_number">+2</div>
-              </div>
-            </div>
-            <button class="publication_btn">Proposer de l'aide</button>
-          </div>
-          <div class="neighbor_card offer_help">
-            <div class="card_header">
-              <div class="avatar_wrapper">
-                <div class="avatar"></div>
-              </div>
-              <div class="card_data">
-                <div class="card_user">
-                  <span>Jeanne, 45 ans,<br />Aubervilliers</span>
-                </div>
-                <div class="confirmed"></div>
-              </div>
-              <div class="card_categories">
-                <div class="category">Garder les animaux</div>
-                <div class="category_number">+2</div>
-              </div>
-            </div>
-            <button class="publication_btn">Proposer de l'aide</button>
-          </div>
-          <div class="neighbor_card need_help">
-            <div class="card_header">
-              <div class="avatar_wrapper">
-                <div class="avatar"></div>
-              </div>
-              <div class="card_data">
-                <div class="card_user">
-                  <span>Jeanne, 45 ans,<br />Aubervilliers</span>
-                </div>
-                <div class="confirmed"></div>
-              </div>
-              <div class="card_categories">
-                <div class="category">Garder les animaux</div>
-                <div class="category_number">+2</div>
-              </div>
-            </div>
-            <button class="publication_btn">Proposer de l'aide</button>
-          </div>
-          <div class="neighbor_card offer_help">
-            <div class="card_header">
-              <div class="avatar_wrapper">
-                <div class="avatar"></div>
-              </div>
-              <div class="card_data">
-                <div class="card_user">
-                  <span>Jeanne, 45 ans,<br />Aubervilliers</span>
-                </div>
-                <div class="confirmed"></div>
-              </div>
-              <div class="card_categories">
-                <div class="category">Garder les animaux</div>
-                <div class="category_number">+2</div>
-              </div>
-            </div>
-            <button class="publication_btn">Proposer de l'aide</button>
-          </div>
-        </div>
-        <button class="see_more_btn blue">VOIR 4 PERSONNES DE PLUS</button>
-      </section>
-      <section id="sn_links">
-        <div class="section_title">
-          <h2>A très vite sur le réseau Ensembl’ !</h2>
-        </div>
-        <div class="sn_icons">
-          <div class="sn_icon website"></div>
-          <div class="sn_icon linkedin"></div>
-          <div class="sn_icon facebook"></div>
-          <div class="sn_icon instagram"></div>
-          <div class="sn_icon twitter"></div>
-        </div>
-      </section>
-    </div>
-    <footer>
-      <p>
-        Copyright © 2021 Le Résidentiel Numérique, All rights reserved.<br />Vous
-        recevez cette email car vous êtes inscrit sur ensembl.fr
-      </p>
-      <p>
-        Notre adresse :<br />Le Résidentiel Numérique 168-170, rue Victor Hugo
-        Levallois-Perret 92300 France
-      </p>
-      <p>Ajoutez-nous à votre carnet d'adresses</p>
-      <p>
-        Vous ne souhaitez pas recevoir d'emails ?<br />Vous pouvez vous
-        désinscrire.
-      </p>
-    </footer>
+  <body style="margin: 0; padding: 0">
+    <header
+      style="
+        background: linear-gradient(90deg, #1a95c2 40%, #0067c7 100%);
+        height: 60px;
+      "
+    ></header>
+    <table>
+
+    </table>
+    <table
+      align="center"
+      cellpadding="0"
+      style="max-width: 740px; font-family: 'Work Sans'"
+    >
+      <tr>
+        <td>
+          <!-- VOTRE VILLE A BESOIN DE VOUS -->
+          <table style="width: 100%; text-align: center;">
+            <tr>
+              <td>
+                <img src="assets/bubble/orange_left.png" width="50px" />
+              </td>
+              <td>
+                <h1>Votre ville a besoin de vous !</h1>
+              </td>
+              <td>
+                <img src="assets/bubble/orange_right.png" width="50px" />
+              </td>
+              </td>
+            </tr>
+          </table>
+          <table style="width: 100%;">
+            <tr>
+              <td>
+                <table
+                  style="
+                    background: url('./assets/bubble_bg_card.png'),
+                      linear-gradient(278.25deg, #f19101 22.89%, #e7a542 62.97%);
+                    background-size: cover;
+                    border-radius: 10px;
+                    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                    width: 100%;
+                    text-align: center;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <table style="width: 100%; text-align: center;">
+                        <tr>
+                          <td>
+                            <h2
+                              style="font-weight: 500; font-size: 26px; color: white; margin: 15px auto 0px auto"
+                            >
+                              Offrez un peu de temps pour aider <br />
+                              Odile à faire ses courses.
+                            </h2>
+                          </td>
+                        </tr>
+                      </table>
+                      <table style="background-image: url('./assets/bubble.png'); background-size: 100% 100%; width: 296px; height: 296px; margin: auto;">
+                        <tr>
+                          <td>
+                            <h3 style="font-size: 16px; font-weight: 700; margin: 0; line-height: 19px;">Odile, 88 ans, Aubervilliers</h3>
+                            <span style="font-size: 10px; line-height: 11px;">a besoin d'aide pour</span>
+                            <table style="border: 1px solid #F19101; border-radius: 27px; color: #F19101; margin: 12px auto; padding: 0px 10px; font-size: 12px;">
+                              <tr>
+                                <td>
+                                  Faire les courses
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <table style="background-color: white; color: #F19101; border-radius: 4px; padding: 10px 40px; font-weight: 700; text-transform: uppercase; font-size: 15px; margin: 0px auto 23px auto; ">
+                        <tr>
+                          <td>
+                            Je propose mon aide
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- /VOTRE VILLE A BESOIN DE VOUS -->
+
+          <!-- DU NOUVEAU SUR LE RESEAU -->
+          <table style="width: 100%; text-align: center; margin-top: 30px; ">
+            <tr>
+              <td>
+                <img src="assets/bubble/green_left.png" width="50px" />
+              </td>
+              <td>
+                <h1>Du nouveau sur le réseau</h1>
+              </td>
+              <td>
+                <img src="assets/bubble/green_right.png" width="50px" />
+              </td>
+            </tr>
+          </table>
+          <table style="width: 100%;">
+            <tr>
+              <td style="padding-right: 10px;">
+                <table style="width: 100%; overflow: hidden; border-radius: 10px; box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); border-left: 10px solid #F19101; padding: 20px;">
+                  <tr>
+                    <td>
+                      <table style="width: 100%">
+                        <tr>
+                          <td style="width: 36px; vertical-align: baseline;">
+                            <img src="https://staging.media.ensembl.fr/original/email/nl-v4/publication_avatar.png" width="36px"/>
+                          </td>
+                          <td>
+                            <h3 style="margin: 0">Rébecca, 38 ans,<br/>Aubervilliers</h3>
+                            <p style="margin: 0; color: #F19101; font-size: 12px; font-weight: bold;">Demande un coup de main</p>
+                            <span style="color: #727272; font-size: 12px;">le 12 janvier</span>
+                          </td>
+                          <td>
+
+                          </td>
+                        </tr>
+                      </table>
+                      <table style="border: 1px solid #F19101; border-radius: 27px; color: #F19101; margin: 12px 0px; padding: 0px 10px; font-size: 12px;">
+                        <tr>
+                          <td>
+                            Plomberie
+                          </td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td>
+                            <span style="color: #727272;">Bonjour, je suis à la recherche de quelqu’un qui pourrait m’aider. Je souhaite faire un raccord en...<br/><strong>Voir plus</strong></span>
+                          </td>
+                        </tr>
+                      </table>
+                      <hr style="border: 1px solid #ccc; margin: 20px 0px"/>
+                      <table style="
+                      border-radius: 4px; 
+                      color: white; 
+                      text-align: center; 
+                      padding: 15px 17px; 
+                      width: 100%; 
+                      font-size: 12px; 
+                      font-weight: 700;
+                      text-transform: uppercase;
+                      background-color: #F19101;">
+                        <tr>
+                          <td>
+                            Proposer mon aide à Rebecca
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td style="padding-left: 10px;">
+                <table style="width: 100%; overflow: hidden; border-radius: 10px; box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); border-left: 10px solid #24ACAC; padding: 20px;">
+                  <tr>
+                    <td>
+                      <table style="width: 100%">
+                        <tr>
+                          <td style="width: 36px; vertical-align: baseline;">
+                            <img src="https://staging.media.ensembl.fr/original/email/nl-v4/publication_avatar.png" width="36px"/>
+                          </td>
+                          <td>
+                            <h3 style="margin: 0">Rébecca, 38 ans,<br/>Aubervilliers</h3>
+                            <p style="margin: 0; color: #24ACAC; font-size: 12px; font-weight: bold;">Demande un coup de main</p>
+                            <span style="color: #727272; font-size: 12px;">le 12 janvier</span>
+                          </td>
+                          <td>
+
+                          </td>
+                        </tr>
+                      </table>
+                      <table style="border: 1px solid #24ACAC; border-radius: 27px; color: #24ACAC; margin: 12px 0px; padding: 0px 10px; font-size: 12px;">
+                        <tr>
+                          <td>
+                            Plomberie
+                          </td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td>
+                            <span style="color: #727272;">Bonjour, je suis à la recherche de quelqu’un qui pourrait m’aider. Je souhaite faire un raccord en...<br/><strong>Voir plus</strong></span>
+                          </td>
+                        </tr>
+                      </table>
+                      <hr style="border: 1px solid #ccc; margin: 20px 0px"/>
+                      <table style="
+                      border-radius: 4px; 
+                      color: white; 
+                      text-align: center; 
+                      padding: 15px 17px; 
+                      width: 100%; 
+                      font-size: 12px; 
+                      font-weight: 700;
+                      text-transform: uppercase;
+                      background-color: #24ACAC;">
+                        <tr>
+                          <td>
+                            Proposer mon aide à Rebecca
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table style="
+          width: 100%; 
+          text-align: center; 
+          border-radius: 10px; 
+          border: 1px solid #24ACAC; 
+          color: #24ACAC; 
+          font-size: 14px; 
+          font-weight: 700; 
+          padding: 24px; 
+          text-transform: uppercase;
+          margin-top: 30px;
+          ">
+            <tr>
+              <td>
+                Voir 12 personnes de plus
+              </td>
+            </tr>
+          </table>
+          <!-- /DU NOUVEAU SUR LE RESEAU -->
+
+          <!-- VOUS POUVEZ VOUS ENTRAIDER -->
+          <table style="width: 100%; text-align: center; margin-top: 30px; ">
+            <tr>
+              <td>
+                <img src="assets/bubble/blue_left.png" width="50px" />
+              </td>
+              <td>
+                <h1>Vous pouvez vous entraider</h1>
+              </td>
+              <td>
+                <img src="assets/bubble/blue_right.png" width="50px" />
+              </td>
+            </tr>
+          </table>
+          <table style="width: 100%">
+            <tr>
+              <td>
+                <table style="
+                  padding: 23px;
+                  width: 100%; 
+                  background-color: white;
+                  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                  border-radius: 10px;
+                  ">
+                  <tr>
+                    <td>
+                      <table>
+                        <tr>
+                          <td>
+                            <h3 style="font-size: 14px; margin: 0;">Jeanne, 45 ans,<br/>Aubervilliers</h3>
+                          </td>
+                        </tr>
+                      </table>
+                      <table style="
+                      border-radius: 4px; 
+                      color: white; 
+                      text-align: center; 
+                      padding: 15px 17px; 
+                      width: 100%; 
+                      font-size: 10px; 
+                      font-weight: 700;
+                      text-transform: uppercase;
+                      background-color: #24ACAC;">
+                        <tr>
+                          <td>
+                            Proposer de l'aide
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table style="
+                padding: 23px;
+                width: 100%; 
+                background-color: white;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                ">
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <h3 style="font-size: 14px; margin: 0;">Jeanne, 45 ans,<br/>Aubervilliers</h3>
+                        </td>
+                      </tr>
+                    </table>
+                    <table style="
+                    border-radius: 4px; 
+                    color: white; 
+                    text-align: center; 
+                    padding: 15px 17px; 
+                    width: 100%; 
+                    font-size: 10px; 
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    background-color: #24ACAC;">
+                      <tr>
+                        <td>
+                          Proposer de l'aide
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table style="
+                padding: 23px;
+                width: 100%; 
+                background-color: white;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                ">
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <h3 style="font-size: 14px; margin: 0;">Jeanne, 45 ans,<br/>Aubervilliers</h3>
+                        </td>
+                      </tr>
+                    </table>
+                    <table style="
+                    border-radius: 4px; 
+                    color: white; 
+                    text-align: center; 
+                    padding: 15px 17px; 
+                    width: 100%; 
+                    font-size: 10px; 
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    background-color: #24ACAC;">
+                      <tr>
+                        <td>
+                          Proposer de l'aide
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              </td>
+              <td>
+                <table style="
+                padding: 23px;
+                width: 100%; 
+                background-color: white;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                ">
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <h3 style="font-size: 14px; margin: 0;">Jeanne, 45 ans,<br/>Aubervilliers</h3>
+                        </td>
+                      </tr>
+                    </table>
+                    <table style="
+                    border-radius: 4px; 
+                    color: white; 
+                    text-align: center; 
+                    padding: 15px 17px; 
+                    width: 100%; 
+                    font-size: 10px; 
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    background-color: #24ACAC;">
+                      <tr>
+                        <td>
+                          Proposer de l'aide
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              </td>
+            </tr>
+          </table>
+          <table style="
+            width: 100%; 
+            text-align: center; 
+            border-radius: 10px; 
+            border: 1px solid #1A95C2; 
+            color: #1A95C2; 
+            font-size: 14px; 
+            font-weight: 700; 
+            padding: 24px; 
+            text-transform: uppercase;
+            margin-top: 30px;
+            "
+          >
+            <tr>
+              <td>
+                Voir 4 personnes de plus
+              </td>
+            </tr>
+          </table>
+          <!-- /VOUS POUVEZ VOUS ENTRAIDER -->
+
+          <!-- A TRES VITE SUR LE RESEAU ENSEMBL' -->
+          <table style="width: 100%; text-align: center; margin-top: 30px; margin-bottom: 16px;">
+            <tr>
+              <td>
+                <h2>A très vite sur le réseau Ensembl' !</h2>
+              </td>
+            </tr>
+          </table>
+          <table style="width: 100%; text-align: center;">
+            <tr>
+              <td>
+                <img src="assets/sn_icons/website.png" width="72px"/>
+              </td>
+              <td>
+                <img src="assets/sn_icons/linkedin.png" width="72px"/>
+              </td>
+              <td>
+                <img src="assets/sn_icons/facebook.png" width="72px"/>
+              </td>
+              <td>
+                <img src="assets/sn_icons/instagram.png" width="72px"/>
+              </td>
+              <td>
+                <img src="assets/sn_icons/twitter.png" width="72px"/>
+              </td>
+            </tr>
+          </table>
+          <!-- /A TRES VITE SUR LE RESEAU ENSEMBL' -->
+
+          <!-- FOOTER -->
+          <table style="width: 100%; text-align: center; color: #747474; font-weight: 700; font-size: 14px; text-transform: uppercase; margin-top: 60px">
+            <tr>
+              <td>
+                <p>
+                  Copyright © 2021 Le Résidentiel Numérique, All rights reserved.<br/>Vous recevez cette email car vous êtes inscrit sur ensembl.fr</p>
+                  <p>Notre adresse :<br/>Le Résidentiel Numérique 168-170, rue Victor Hugo Levallois-Perret 92300 France</p>
+                  <p>Ajoutez-nous à votre carnet d'adresses</p>
+                  <p>Vous ne souhaitez pas recevoir d'emails ? Vous pouvez vous désinscrire.</p>
+                </p>
+              </td>
+            </tr>
+          </table>
+          <!-- /FOOTER -->
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
