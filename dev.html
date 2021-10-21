@@ -1,0 +1,370 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Newsletter Ensembl' [DEV]</title>
+</head>
+
+<body style="margin: 0; padding: 0">
+
+    <!-- VOTRE VILLE A BESOIN DE VOUS -->
+
+    {{#if DemandCount}}
+    <h2>VOTRE VILLE A BESOIN DE VOUS</h2>
+    <p>
+        Offrez un peu de temps pour aider {{Demands.0.needer.name}}
+
+        {{#if Demands.0.avatar.url.large}}
+        <p>
+            <img src="{{Demands.0.needed.avatar.url.large}}">
+        </p>
+        {{else}}
+        <p>
+            <img src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png">
+        </p>
+        {{/if}}
+
+        <p>
+            {{Demands.0.needer.name}}
+        </p>
+
+        <p>
+            {{#if Demands.0.needer.places}}
+            {{Demands.0.needer.places.0.address.locality}}
+            {{/if}}
+        </p>
+        {{Demands.0.category.name}}
+    </p>
+    {{/if}}
+    <!-- /VOTRE VILLE A BESOIN DE VOUS -->
+
+    <!-- DU NOUVEAU SUR LE RESEAU -->
+    {{#if Publications }}
+    <h2>DU NOUVEAU SUR LE RESEAU</h2>
+    <h3>{{Publications.0.label}}</h3>
+    <p>
+        <p>
+            <p>
+                {{#if `Publications.0.label == "need_help"`}}
+                label need help
+                {{else}}
+                label offer help
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Publications.0.publisher.avatar.url.large}}
+                <img src="{{Publications.0.publisher.avatar.url.large}}">
+                {{else}}
+                <img src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png">
+                {{/if}}
+            </p>
+
+            <p>
+                {{Publications.0.publisher.name}}
+            </p>
+
+            <p>
+                {{#if Publications.0.places}}
+                {{Publications.0.places.0.address.locality}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{Publications.0.category.name}}
+            </p>
+
+            <p>
+                {{Publications.0.text}}
+            </p>
+
+            <p>
+                <a href="https://app.ensembl.fr/publication/{{Publications.0.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood" target="_blank">
+                    Voir plus
+                </a>
+            </p>
+
+            <p>
+                {{#if `Publications.0.label == "need_help"`}}
+                {{else}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if `Publications.0.label == "need_help"`}}
+                Proposer mon aide à {{Publications.0.publisher.name}}
+                {{else}}
+                Demander de l'aide à {{Publications.0.publisher.name}}
+                {{/if}}
+            </p>
+        </p>
+
+        {{#if Publications.1 }}
+        <h3>{{Publications.1.label}}</h3>
+        <p>
+            <p>
+                {{#if `Publications.1.label == "need_help"`}}
+                label need help
+                {{else}}
+                label offer help
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Publications.1.publisher.avatar.url.large}}
+                <img src="{{Publications.1.publisher.avatar.url.large}}">
+                {{else}}
+                <img src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png">
+                {{/if}}
+            </p>
+
+            <p>
+                {{Publications.1.publisher.name}}
+            </p>
+
+            <p>
+                {{#if Publications.1.places}}
+                {{Publications.1.places.0.address.locality}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{Publications.1.category.name}}
+            </p>
+
+            <p>
+                {{Publications.1.text}}
+            </p>
+
+            <p>
+                <a href="https://app.ensembl.fr/publication/{{Publications.1.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood" target="_blank">
+                    Voir plus
+                </a>
+            </p>
+
+            <p>
+                {{#if `Publications.1.label == "need_help"`}}
+                {{else}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if `Publications.1.label == "need_help"`}}
+                Proposer mon aide à {{Publications.1.publisher.name}}
+                {{else}}
+                Demander de l'aide à {{Publications.1.publisher.name}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if PublicationsCount}}
+                <p>
+                    <a href="https://app.ensembl.fr/actualites?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood">Voir
+                        toutes les publications</a>
+                </p>
+
+                <p>
+                    Voir les {{PublicationsCount}} publications
+                </p>
+                {{/if}}
+            </p>
+        </p>
+        {{/if}}
+    </p>
+    {{/if}}
+    <!-- /DU NOUVEAU SUR LE RESEAU -->
+
+    <!-- VOUS POUVEZ VOUS ENTRAIDER -->
+
+    <h2>VOUS POUVEZ VOUS ENTRAIDER</h2>
+    <p>
+        <p>
+            <h3>{{Neighbours.0.first_name}} {{Neighbours.0.last_name}}</h3>
+            <p>
+                {{Neighbours.0.first_name}}
+            </p>
+
+            <p>
+                {{#if Neighbours.0.avatar.url.large}}
+                <img src="{{Neighbours.0.avatar.url.large}}">
+                {{else}}
+                <img src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png">
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.0.places}}
+                {{Neighbours.0.places.0.address.locality}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.0.categories_v2.need.0 }}
+                {{Neighbours.0.categories.need.0.name}}
+                {{else}}
+                {{Neighbours.0.categories.offer.0.name}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.0.categories_v2.need.0 }}
+                {{else}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.0.categories_v2.need.0 }}
+                Proposer de l'aide
+                {{else}}
+                Demander de l'aide
+                {{/if}}
+            </p>
+        </p>
+
+        {{#if Neighbours.1}}
+        <p>
+            <h3>{{Neighbours.1.first_name}} {{Neighbours.1.last_name}}</h3>
+            <p>
+                {{Neighbours.1.first_name}}
+            </p>
+
+            <p>
+                {{#if Neighbours.1.avatar.url.large}}
+                <img src="{{Neighbours.1.avatar.url.large}}">
+                {{else}}
+                <img src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png">
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.1.places}}
+                {{Neighbours.1.places.0.address.locality}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.1.categories_v2.need.0 }}
+                {{Neighbours.1.categories_v2.need.0.name}}
+                {{else}}
+                {{Neighbours.1.categories_v2.offer.0.name}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.1.categories_v2.need.0 }}
+                {{else}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.1.categories_v2.need.0 }}
+                Proposer de l'aide
+                {{else}}
+                Demander de l'aide
+                {{/if}}
+            </p>
+        </p>
+        {{/if}}
+
+        {{#if Neighbours.2}}
+        <p>
+            <h3>{{Neighbours.2.first_name}} {{Neighbours.2.last_name}}</h3>
+            <p>
+                {{Neighbours.2.first_name}}
+            </p>
+
+            <p>
+                {{#if Neighbours.2.avatar.url.large}}
+                <img src="{{Neighbours.2.avatar.url.large}}">
+                {{else}}
+                <img src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png">
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.2.places}}
+                {{Neighbours.2.places.0.address.locality}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.2.categories_v2.need.0 }}
+                {{Neighbours.2.categories_v2.need.0.name}}
+                {{else}}
+                {{Neighbours.2.categories_v2.offer.0.name}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.2.categories_v2.need.0 }}
+                {{else}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.2.categories_v2.need.0 }}
+                Proposer de l'aide
+                {{else}}
+                Demander de l'aide
+                {{/if}}
+            </p>
+        </p>
+        {{/if}}
+
+        {{#if Neighbours.3}}
+        <p>
+            <h3>{{Neighbours.3.first_name}} {{Neighbours.3.last_name}}</h3>
+            <p>
+                {{Neighbours.3.first_name}}
+            </p>
+
+            <p>
+                {{#if Neighbours.3.avatar.url.large}}
+                <img src="{{Neighbours.3.avatar.url.large}}">
+                {{else}}
+                <img src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png">
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.3.places}}
+                {{Neighbours.3.places.0.address.locality}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.3.categories_v2.need.0 }}
+                {{Neighbours.3.categories_v2.need.0.name}}
+                {{else}}
+                {{Neighbours.3.categories_v2.offer.0.name}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.3.categories_v2.need.0 }}
+                {{else}}
+                {{/if}}
+            </p>
+
+            <p>
+                {{#if Neighbours.3.categories_v2.need.0 }}
+                Proposer de l'aide
+                {{else}}
+                Demander de l'aide
+                {{/if}}
+            </p>
+        </p>
+
+        {{#if NeighboursCount}}
+        <p>
+            <a href="http://app.ensembl.fr/mes-voisins?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood" target="_blank"> Voir les {{NeighboursCount}} voisins </a>
+        </p>
+        {{/if}}
+    </p>
+    {{/if}}
+    <!-- /VOUS POUVEZ VOUS ENTRAIDER -->
+</body>
+
+</html>
