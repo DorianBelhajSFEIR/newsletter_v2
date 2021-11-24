@@ -364,7 +364,7 @@
           <!-- /PUSH CM -->
 
           <!-- DU NOUVEAU SUR LE RESEAU -->
-          {{#if Publications }}
+          {{#if Publications}}
           <table
             style="
               font-family: 'Work Sans', sans-serif;
@@ -391,29 +391,29 @@
               </td>
             </tr>
           </table>
+
+          {{#each Publications}}
           <table style="font-family: 'Work Sans', sans-serif; width: 100%">
             <tr>
-              <td style="padding-right: 10px">
+              <td style="padding: 0px 5px">
                 <a
-                  href="{{BaseUrl}}/publication/{{Publications.0.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
+                  href="{{BaseUrl}}/publication/{{this.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
                   target="_blank"
                   style="color: black; text-decoration: none"
                 >
                   <table style="width: 100%">
                     <tr>
-                      {{#if `Publications.0.label == "need_help"`}}
-
                       <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/publication_need_bg.png"
+                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/publication_bg.png"
                         style="padding: 51px 40px"
                       >
                         <table style="width: 100%">
                           <tr>
                             <td style="width: 44px; vertical-align: baseline">
-                              {{#if Publications.0.publisher.avatar.url.large}}
+                              {{#if this.publisher.avatar.url.large}}
                               <img
                                 width="36px"
-                                src="{{Publications.0.publisher.avatar.url.large}}"
+                                src="{{this.publisher.avatar.url.large}}"
                               />
                               {{else}}
                               <img
@@ -424,11 +424,11 @@
                             </td>
                             <td>
                               <h3 style="margin: 0; font-size: 16px">
-                                {{Publications.0.publisher.name}},<br />
-                                {{#if Publications.0.places}}
-                                {{Publications.0.places.0.address.locality}}
-                                {{/if}}
+                                {{this.publisher.name}},<br />
+                                {{#if this.places}}
+                                {{this.places.0.address.locality}} {{/if}}
                               </h3>
+                              {{#if `this.label == "need_help"`}}
                               <p
                                 style="
                                   margin: 0;
@@ -439,10 +439,34 @@
                               >
                                 Demande un coup de main
                               </p>
+                              {{/if}} {{#if `this.label == "offer_help"`}}
+                              <p
+                                style="
+                                  margin: 0;
+                                  color: #24acac;
+                                  font-size: 12px;
+                                  font-weight: bold;
+                                "
+                              >
+                                Propose de l'aide
+                              </p>
+                              {{/if}} {{#if `this.label == "information"`}}
+                              <p
+                                style="
+                                  margin: 0;
+                                  color: #1a95c2;
+                                  font-size: 12px;
+                                  font-weight: bold;
+                                "
+                              >
+                                Publie une information
+                              </p>
+                              {{/if}}
                             </td>
                             <td></td>
                           </tr>
                         </table>
+                        {{#if `this.label == "need_help"`}}
                         <table
                           style="
                             border: 1px solid #f19101;
@@ -454,290 +478,10 @@
                           "
                         >
                           <tr>
-                            <td>{{Publications.0.category.name}}</td>
+                            <td>{{this.category.name}}</td>
                           </tr>
                         </table>
-                        <table>
-                          <tr>
-                            <td>
-                              <span style="color: #727272">
-                                {{Publications.0.text}}<br />
-
-                                <strong style="color: #727272"
-                                  >Voir plus
-                                </strong>
-                              </span>
-                            </td>
-                          </tr>
-                        </table>
-                        <hr style="border: 1px solid #ccc; margin: 20px 0px" />
-                        <table
-                          style="
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 12px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                            background-color: #f19101;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              Proposer mon aide à
-                              {{Publications.0.publisher.name}}
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                      {{else}}
-                      <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/publication_offer_bg.png"
-                        style="padding: 51px 40px"
-                      >
-                        <table style="width: 100%">
-                          <tr>
-                            <td style="width: 44px; vertical-align: baseline">
-                              {{#if Publications.0.publisher.avatar.url.large}}
-                              <img
-                                width="36px"
-                                src="{{Publications.0.publisher.avatar.url.large}}"
-                              />
-                              {{else}}
-                              <img
-                                width="36px"
-                                src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                              />
-                              {{/if}}
-                            </td>
-                            <td>
-                              <h3 style="margin: 0; font-size: 16px">
-                                {{Publications.0.publisher.name}},<br />
-                                {{#if Publications.0.places}}
-                                {{Publications.0.places.0.address.locality}}
-                                {{/if}}
-                              </h3>
-                              <p
-                                style="
-                                  margin: 0;
-                                  color: #24acac;
-                                  font-size: 12px;
-                                  font-weight: bold;
-                                "
-                              >
-                                Propose de l'aide
-                              </p>
-                            </td>
-                            <td></td>
-                          </tr>
-                        </table>
-                        <table
-                          style="
-                            border: 1px solid #24acac;
-                            font-size: 12px;
-                            border-radius: 27px;
-                            margin: 12px 0px;
-                            padding: 0px 10px;
-                            font-size: 12px;
-                          "
-                        >
-                          <tr>
-                            <td>{{Publications.0.category.name}}</td>
-                          </tr>
-                        </table>
-                        <table>
-                          <tr>
-                            <td>
-                              <span style="color: #727272">
-                                {{Publications.0.text}}<br />
-                                <a
-                                  href="{{BaseUrl}}/publication/{{Publications.0.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
-                                  target="_blank"
-                                  style="color: #1a95c2; text-decoration: none"
-                                >
-                                  <strong style="color: #727272"
-                                    >Voir plus
-                                  </strong>
-                                </a>
-                              </span>
-                            </td>
-                          </tr>
-                        </table>
-                        <hr style="border: 1px solid #ccc; margin: 20px 0px" />
-                        <table
-                          style="
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 12px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                            background-color: #24acac;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              Demander de l'aide à
-                              {{Publications.0.publisher.name}}
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                      {{/if}}
-                    </tr>
-                  </table>
-                </a>
-              </td>
-              <td style="padding-left: 10px">
-                {{#if Publications.1}}
-                <a
-                  href="{{BaseUrl}}/publication/{{Publications.1.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
-                  target="_blank"
-                  style="color: black; text-decoration: none"
-                >
-                  <table style="width: 100%">
-                    <tr>
-                      {{#if `Publications.1.label == "need_help"`}}
-                      <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/publication_need_bg.png"
-                        style="padding: 51px 40px"
-                      >
-                        <table style="width: 100%">
-                          <tr>
-                            <td style="width: 44px; vertical-align: baseline">
-                              {{#if Publications.1.publisher.avatar.url.large}}
-                              <img
-                                width="36px"
-                                src="{{Publications.1.publisher.avatar.url.large}}"
-                              />
-                              {{else}}
-                              <img
-                                width="36px"
-                                src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                              />
-                              {{/if}}
-                            </td>
-                            <td>
-                              <h3 style="margin: 0; font-size: 16px">
-                                {{Publications.1.publisher.name}},<br />
-                                {{#if Publications.1.places}}
-                                {{Publications.1.places.0.address.locality}}
-                                {{/if}}
-                              </h3>
-                              <p
-                                style="
-                                  margin: 0;
-                                  color: #f19101;
-                                  font-size: 12px;
-                                  font-weight: bold;
-                                "
-                              >
-                                Demande un coup de main
-                              </p>
-                            </td>
-                          </tr>
-                        </table>
-                        {{#if Publications.1.category.name}}
-                        <table
-                          style="
-                            border: 1px solid #f19101;
-                            color: #f19101;
-                            border-radius: 27px;
-                            margin: 12px 0px;
-                            padding: 0px 10px;
-                            font-size: 12px;
-                          "
-                        >
-                          <tr>
-                            <td>{{Publications.1.category.name}}</td>
-                          </tr>
-                        </table>
-                        {{/if}}
-                        <table>
-                          <tr>
-                            <td>
-                              <span style="color: #727272">
-                                {{Publications.0.text}}<br />
-                                <a
-                                  href="{{BaseUrl}}/publication/{{Publications.1.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
-                                  target="_blank"
-                                  style="color: #1a95c2; text-decoration: none"
-                                >
-                                  <strong style="color: #727272"
-                                    >Voir plus</strong
-                                  >
-                                </a>
-                              </span>
-                            </td>
-                          </tr>
-                        </table>
-                        <hr style="border: 1px solid #ccc; margin: 20px 0px" />
-                        <table
-                          style="
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 12px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                            background-color: #f19101;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              Proposer mon aide à
-                              {{Publications.1.publisher.name}}
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                      {{else}}
-                      <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/publication_offer_bg.png"
-                        style="padding: 51px 40px"
-                      >
-                        <table style="width: 100%">
-                          <tr>
-                            <td style="width: 44px; vertical-align: baseline">
-                              {{#if Publications.1.publisher.avatar.url.large}}
-                              <img
-                                width="36px"
-                                src="{{Publications.1.publisher.avatar.url.large}}"
-                              />
-                              {{else}}
-                              <img
-                                width="36px"
-                                src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                              />
-                              {{/if}}
-                            </td>
-                            <td>
-                              <h3 style="margin: 0; font-size: 16px">
-                                {{Publications.1.publisher.name}},<br />
-                                {{#if Publications.1.places}}
-                                {{Publications.1.places.0.address.locality}}
-                                {{/if}}
-                              </h3>
-                              <p
-                                style="
-                                  margin: 0;
-                                  color: #24acac;
-                                  font-size: 12px;
-                                  font-weight: bold;
-                                "
-                              >
-                                Propose de l'aide
-                              </p>
-                            </td>
-                          </tr>
-                        </table>
-                        {{#if Publications.1.category.name}}
+                        {{/if}} {{#if `this.label == "offer_help"`}}
                         <table
                           style="
                             border: 1px solid #24acac;
@@ -749,7 +493,7 @@
                           "
                         >
                           <tr>
-                            <td>{{Publications.1.category.name}}</td>
+                            <td>{{this.category.name}}</td>
                           </tr>
                         </table>
                         {{/if}}
@@ -757,21 +501,35 @@
                           <tr>
                             <td>
                               <span style="color: #727272">
-                                {{Publications.0.text}}<br />
-                                <a
-                                  href="{{BaseUrl}}/publication/{{Publications.1.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
-                                  target="_blank"
-                                  style="color: #1a95c2; text-decoration: none"
-                                >
-                                  <strong style="color: #727272"
-                                    >Voir plus</strong
-                                  >
-                                </a>
+                                {{this.text}}<br />
+
+                                <strong style="color: #727272"
+                                  >Voir plus
+                                </strong>
                               </span>
                             </td>
                           </tr>
                         </table>
                         <hr style="border: 1px solid #ccc; margin: 20px 0px" />
+                        {{#if `this.label == "need_help"`}}
+                        <table
+                          style="
+                            border-radius: 4px;
+                            color: white;
+                            text-align: center;
+                            padding: 15px 17px;
+                            width: 100%;
+                            font-size: 12px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            background-color: #f19101;
+                          "
+                        >
+                          <tr>
+                            <td>Proposer mon aide à {{this.publisher.name}}</td>
+                          </tr>
+                        </table>
+                        {{/if}} {{#if `this.label == "offer_help"`}}
                         <table
                           style="
                             border-radius: 4px;
@@ -787,32 +545,60 @@
                         >
                           <tr>
                             <td>
-                              Demander de l'aide à
-                              {{Publications.1.publisher.name}}
+                              Demander de l'aide à {{this.publisher.name}}
                             </td>
                           </tr>
                         </table>
+                        {{/if}} {{#if `this.label == "information"`}}
+                        <table
+                          style="
+                            border-radius: 4px;
+                            color: white;
+                            text-align: center;
+                            padding: 15px 17px;
+                            width: 100%;
+                            font-size: 12px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            background-color: #1a95c2;
+                          "
+                        >
+                          <tr>
+                            <td>
+                              Voir la publication de {{this.publisher.name}}
+                            </td>
+                          </tr>
+                        </table>
+                        {{/if}}
                       </td>
-                      {{/if}}
                     </tr>
                   </table>
                 </a>
-                {{/if}}
               </td>
             </tr>
           </table>
-          {{#if PublicationsCount}}
+          {{/each}} {{#if PublicationsCount}}
           <a
             href="{{BaseUrl}}/actualites?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
-            style="
-              background: #1a95c2;
-              border-radius: 8px;
-              padding: 10px 17px;
-              text-decoration: none;
-              color: white;
-            "
           >
-            Voir toutes les publications
+            <table
+              style="
+                width: 100%;
+                text-align: center;
+                border-radius: 10px;
+                border: 1px solid #1a95c2;
+                color: #1a95c2;
+                font-size: 14px;
+                font-weight: 700;
+                padding: 24px;
+                text-transform: uppercase;
+                margin-top: 30px;
+              "
+            >
+              <tr>
+                <td>Voir {{PublicationsCount}} publications de plus</td>
+              </tr>
+            </table>
           </a>
           {{/if}} {{/if}}
           <!-- /DU NOUVEAU SUR LE RESEAU -->
@@ -845,11 +631,12 @@
               </td>
             </tr>
           </table>
+          {{#each Neighbours}}
           <table style="font-family: 'Work Sans', sans-serif; width: 100%">
             <tr>
               <td>
                 <a
-                  href="{{BaseUrl}}/voisin/{{Neighbours.0.id}}?t={{RecipientToken}}"
+                  href="{{BaseUrl}}/voisin/{{this.id}}?t={{RecipientToken}}"
                   style="color: black; text-decoration: none"
                 >
                   <table style="width: 373px">
@@ -861,10 +648,10 @@
                         <table>
                           <tr>
                             <td style="width: 44px; vertical-align: baseline">
-                              {{#if Neighbours.0.avatar.url.large}}
+                              {{#if this.avatar.url.large}}
                               <img
                                 width="36px"
-                                src="{{Neighbours.0.avatar.url.large}}"
+                                src="{{this.avatar.url.large}}"
                               />
                               {{else}}
                               <img
@@ -875,17 +662,16 @@
                             </td>
                             <td>
                               <h3 style="margin: 0; font-size: 14px">
-                                {{Neighbours.0.first_name}},<br />
-                                {{#if Neighbours.0.places}}
-                                {{Neighbours.0.places.0.address.locality}}
-                                {{/if}}
+                                {{this.first_name}},<br />
+                                {{#if this.places}}
+                                {{this.places.0.address.locality}} {{/if}}
                               </h3>
                             </td>
                           </tr>
                         </table>
                         <table style="margin-top: 5px; margin-bottom: 10px">
                           <tr>
-                            {{#if Neighbours.0.categories_v2.need.0 }}
+                            {{#if this.categories_v2.need.0 }}
                             <td
                               style="
                                 border: 1px solid #24acac;
@@ -896,9 +682,9 @@
                                 font-size: 12px;
                               "
                             >
-                              {{Neighbours.0.categories_v2.need.0.name}}
+                              {{this.categories_v2.need.0.name}}
                             </td>
-                            {{else}}
+                            {{/if}} {{#if this.categories_v2.offer.0}}
                             <td
                               style="
                                 border: 1px solid #f19101;
@@ -909,12 +695,12 @@
                                 font-size: 12px;
                               "
                             >
-                              {{Neighbours.0.categories_v2.offer.0.name}}
+                              {{this.categories_v2.offer.0.name}}
                             </td>
                             {{/if}}
                           </tr>
                         </table>
-                        {{#if Neighbours.0.categories_v2.need.0}}
+                        {{#if this.categories_v2.need.0}}
                         <table
                           style="
                             background-color: #24acac;
@@ -929,14 +715,10 @@
                           "
                         >
                           <tr>
-                            <td>
-                              {{#if Neighbours.0.categories_v2.need.0 }}
-                              Proposer de l'aide {{else}} Demander de l'aide
-                              {{/if}}
-                            </td>
+                            <td>Proposer de l'aide</td>
                           </tr>
                         </table>
-                        {{else}}
+                        {{/if}} {{#if this.categories_v2.offer.0}}
                         <table
                           style="
                             background-color: #f19101;
@@ -951,11 +733,7 @@
                           "
                         >
                           <tr>
-                            <td>
-                              {{#if Neighbours.0.categories_v2.need.0 }}
-                              Proposer de l'aide {{else}} Demander de l'aide
-                              {{/if}}
-                            </td>
+                            <td>Demander de l'aide</td>
                           </tr>
                         </table>
                         {{/if}}
@@ -963,369 +741,10 @@
                     </tr>
                   </table>
                 </a>
-              </td>
-              <td>
-                {{#if Neighbours.1}}
-                <a
-                  href="{{BaseUrl}}/voisin/{{Neighbours.1.id}}?t={{RecipientToken}}"
-                  style="color: black; text-decoration: none"
-                >
-                  <table style="width: 373px">
-                    <tr>
-                      <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg.png"
-                        style="padding: 47px 32px"
-                      >
-                        <table>
-                          <tr>
-                            <td style="width: 44px; vertical-align: baseline">
-                              {{#if Neighbours.1.avatar.url.large}}
-                              <img
-                                width="36px"
-                                src="{{Neighbours.1.avatar.url.large}}"
-                              />
-                              {{else}}
-                              <img
-                                width="36px"
-                                src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                              />
-                              {{/if}}
-                            </td>
-                            <td>
-                              <h3 style="margin: 0; font-size: 14px">
-                                {{Neighbours.1.first_name}},<br />
-                                {{#if Neighbours.1.places}}
-                                {{Neighbours.1.places.0.address.locality}}
-                                {{/if}}
-                              </h3>
-                            </td>
-                          </tr>
-                        </table>
-                        <table style="margin-top: 5px; margin-bottom: 10px">
-                          <tr>
-                            {{#if Neighbours.1.categories_v2.need.0 }}
-                            <td
-                              style="
-                                border: 1px solid #24acac;
-                                border-radius: 27px;
-                                color: #24acac;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
-                              "
-                            >
-                              {{Neighbours.1.categories_v2.need.0.name}}
-                            </td>
-                            {{else}}
-                            <td
-                              style="
-                                border: 1px solid #f19101;
-                                border-radius: 27px;
-                                color: #f19101;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
-                              "
-                            >
-                              {{Neighbours.1.categories_v2.offer.0.name}}
-                            </td>
-                            {{/if}}
-                          </tr>
-                        </table>
-                        {{#if Neighbours.1.categories_v2.need.0 }}
-                        <table
-                          style="
-                            background-color: #24acac;
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 10px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              {{#if Neighbours.1.categories_v2.need.0 }}
-                              Proposer de l'aide {{else}} Demander de l'aide
-                              {{/if}}
-                            </td>
-                          </tr>
-                        </table>
-                        {{else}}
-                        <table
-                          style="
-                            background-color: #f19101;
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 10px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              {{#if Neighbours.1.categories_v2.need.0 }}
-                              Proposer de l'aide {{else}} Demander de l'aide
-                              {{/if}}
-                            </td>
-                          </tr>
-                        </table>
-                        {{/if}}
-                      </td>
-                    </tr>
-                  </table>
-                </a>
-                {{/if}}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                {{#if Neighbours.2}}
-                <a
-                  href="{{BaseUrl}}/voisin/{{Neighbours.2.id}}?t={{RecipientToken}}"
-                  style="color: black; text-decoration: none"
-                >
-                  <table style="width: 373px">
-                    <tr>
-                      <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg.png"
-                        style="padding: 47px 32px"
-                      >
-                        <table>
-                          <tr>
-                            <td style="width: 44px; vertical-align: baseline">
-                              {{#if Neighbours.2.avatar.url.large}}
-                              <img
-                                width="36px"
-                                src="{{Neighbours.2.avatar.url.large}}"
-                              />
-                              {{else}}
-                              <img
-                                width="36px"
-                                src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                              />
-                              {{/if}}
-                            </td>
-                            <td>
-                              <h3 style="margin: 0; font-size: 14px">
-                                {{Neighbours.2.first_name}},<br />
-                                {{#if Neighbours.2.places}}
-                                {{Neighbours.2.places.0.address.locality}}
-                                {{/if}}
-                              </h3>
-                            </td>
-                          </tr>
-                        </table>
-                        <table style="margin-top: 5px; margin-bottom: 10px">
-                          <tr>
-                            {{#if Neighbours.2.categories_v2.need.0 }}
-                            <td
-                              style="
-                                border: 1px solid #24acac;
-                                border-radius: 27px;
-                                color: #24acac;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
-                              "
-                            >
-                              {{Neighbours.2.categories_v2.need.0.name}}
-                            </td>
-                            {{else}}
-                            <td
-                              style="
-                                border: 1px solid #f19101;
-                                border-radius: 27px;
-                                color: #f19101;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
-                              "
-                            >
-                              {{Neighbours.2.categories_v2.offer.0.name}}
-                            </td>
-                            {{/if}}
-                          </tr>
-                        </table>
-                        {{#if neighbours.2.categories_v2.need.0 }}
-                        <table
-                          style="
-                            background-color: #24acac;
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 10px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              {{#if neighbours.2.categories_v2.need.0 }}
-                              proposer de l'aide {{else}} demander de l'aide
-                              {{/if}}
-                            </td>
-                          </tr>
-                        </table>
-                        {{else}}
-                        <table
-                          style="
-                            background-color: #f19101;
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 10px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              {{#if neighbours.2.categories_v2.need.0 }}
-                              proposer de l'aide {{else}} demander de l'aide
-                              {{/if}}
-                            </td>
-                          </tr>
-                        </table>
-                        {{/if}}
-                      </td>
-                    </tr>
-                  </table>
-                </a>
-                {{/if}}
-              </td>
-              <td>
-                {{#if Neighbours.3}}
-                <a
-                  href="{{BaseUrl}}/voisin/{{Neighbours.3.id}}?t={{RecipientToken}}"
-                  style="color: black; text-decoration: none"
-                >
-                  <table style="width: 373px">
-                    <tr>
-                      <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg.png"
-                        style="padding: 47px 32px"
-                      >
-                        <table>
-                          <tr>
-                            <td style="width: 44px; vertical-align: baseline">
-                              {{#if Neighbours.3.avatar.url.large}}
-                              <img
-                                width="36px"
-                                src="{{Neighbours.3.avatar.url.large}}"
-                              />
-                              {{else}}
-                              <img
-                                width="36px"
-                                src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                              />
-                              {{/if}}
-                            </td>
-                            <td>
-                              <h3 style="margin: 0; font-size: 14px">
-                                {{Neighbours.3.first_name}},<br />
-                                {{#if Neighbours.3.places}}
-                                {{Neighbours.3.places.0.address.locality}}
-                                {{/if}}
-                              </h3>
-                            </td>
-                          </tr>
-                        </table>
-                        <table style="margin: 10px 0px">
-                          <tr>
-                            {{#if Neighbours.3.categories_v2.need.0 }}
-                            <td
-                              style="
-                                border: 1px solid #24acac;
-                                border-radius: 27px;
-                                color: #24acac;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
-                              "
-                            >
-                              {{Neighbours.3.categories_v2.need.0.name}}
-                            </td>
-                            {{else}}
-                            <td
-                              style="
-                                border: 1px solid #f19101;
-                                border-radius: 27px;
-                                color: #f19101;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
-                              "
-                            >
-                              {{Neighbours.3.categories_v2.offer.0.name}}
-                            </td>
-                            {{/if}}
-                          </tr>
-                        </table>
-                        {{#if Neighbours.3.categories_v2.need.0 }}
-                        <table
-                          style="
-                            background-color: #24acac;
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 10px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              {{#if Neighbours.3.categories_v2.need.0 }}
-                              Proposer de l'aide {{else}} Demander de l'aide
-                              {{/if}}
-                            </td>
-                          </tr>
-                        </table>
-                        {{else}}
-                        <table
-                          style="
-                            background-color: #f19101;
-                            border-radius: 4px;
-                            color: white;
-                            text-align: center;
-                            padding: 15px 17px;
-                            width: 100%;
-                            font-size: 10px;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                          "
-                        >
-                          <tr>
-                            <td>
-                              {{#if Neighbours.3.categories_v2.need.0 }}
-                              Proposer de l'aide {{else}} Demander de l'aide
-                              {{/if}}
-                            </td>
-                          </tr>
-                        </table>
-                        {{/if}}
-                      </td>
-                    </tr>
-                  </table>
-                </a>
-                {{/if}}
               </td>
             </tr>
           </table>
-          {{#if NeighboursCount}}
+          {{/each}} {{#if NeighboursCount}}
           <a
             href="{{BaseUrl}}/mes-voisins?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
             target="_blank"
