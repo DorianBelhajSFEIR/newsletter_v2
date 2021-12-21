@@ -76,7 +76,6 @@
         color: #fff;
         vertical-align: middle;
       "
-      bgcolor="#eee"
       background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/fond_header.png"
     >
       <tr>
@@ -117,11 +116,10 @@
       </tr>
     </table>
     <table
-      align="center"
       cellpadding="0"
       style="
         width: 740px;
-        margin-top: 20px;
+        margin: 20px auto;
         font-family: 'Work Sans', sans-serif;
       "
     >
@@ -325,8 +323,8 @@
             </tr>
             <tr>
               <td
-                background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/push_cm.png"
-                style="padding: 25px 45px; height: 270px; text-align: center"
+                background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/push_cm_center.png"
+                style="padding: 25px 45px; text-align: center"
               >
                 {{#if this.title }}
                 <h3 style="margin-top: 0px">{{this.title}}</h3>
@@ -348,7 +346,9 @@
                       font-weight: bold;
                       border-radius: 4px;
                       outline: none;
-                      margin: 1em auto;
+                      margin-top: 1em;
+                      margin-left: auto;
+                      margin-right: auto;
                       font-size: 14px;
                     "
                   >
@@ -358,6 +358,12 @@
                   </table>
                 </a>
               </td>
+            </tr>
+            <tr>
+              <td
+                style="height: 36px"
+                background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/push_cm_bottom.png"
+              ></td>
             </tr>
           </table>
           {{/each}} {{/if}}
@@ -401,11 +407,17 @@
                   target="_blank"
                   style="color: black; text-decoration: none"
                 >
-                  <table style="width: 100%">
+                  <table style="width: 100%" cellpadding="0" cellspacing="0">
                     <tr>
                       <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/publication_bg.png"
-                        style="padding: 51px 40px"
+                        style="height: 26px"
+                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg_top.png"
+                      ></td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="padding: 20px 30px"
+                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg_center.png"
                       >
                         <table style="width: 100%">
                           <tr>
@@ -472,7 +484,7 @@
                             border: 1px solid #f19101;
                             color: #f19101;
                             border-radius: 27px;
-                            margin: 12px 0px;
+                            margin-top: 12px;
                             padding: 0px 10px;
                             font-size: 12px;
                           "
@@ -487,7 +499,7 @@
                             border: 1px solid #24acac;
                             color: #24acac;
                             border-radius: 27px;
-                            margin: 12px 0px;
+                            margin-top: 12px;
                             padding: 0px 10px;
                             font-size: 12px;
                           "
@@ -497,7 +509,7 @@
                           </tr>
                         </table>
                         {{/if}}
-                        <table>
+                        <table style="margin-top: 12px">
                           <tr>
                             <td>
                               <span style="color: #727272">
@@ -572,6 +584,12 @@
                         {{/if}}
                       </td>
                     </tr>
+                    <tr>
+                      <td
+                        style="height: 32px"
+                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg_bottom.png"
+                      ></td>
+                    </tr>
                   </table>
                 </a>
               </td>
@@ -632,18 +650,30 @@
             </tr>
           </table>
           {{#each Neighbours}}
-          <table style="font-family: 'Work Sans', sans-serif; width: 100%">
+          <table
+            style="
+              font-family: 'Work Sans', sans-serif;
+              width: 50%;
+              float: left;
+            "
+          >
             <tr>
               <td>
                 <a
                   href="{{BaseUrl}}/voisin/{{this.id}}?t={{RecipientToken}}"
                   style="color: black; text-decoration: none"
                 >
-                  <table style="width: 373px">
+                  <table style="width: 100%" cellpadding="0" cellspacing="0">
                     <tr>
                       <td
-                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg.png"
-                        style="padding: 47px 32px"
+                        style="height: 26px"
+                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg_top.png"
+                      ></td>
+                    </tr>
+                    <tr>
+                      <td
+                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg_center.png"
+                        style="padding: 10px 30px"
                       >
                         <table>
                           <tr>
@@ -669,9 +699,9 @@
                             </td>
                           </tr>
                         </table>
+                        {{#if this.categories_v2.need.0 }}
                         <table style="margin-top: 5px; margin-bottom: 10px">
                           <tr>
-                            {{#if this.categories_v2.need.0 }}
                             <td
                               style="
                                 border: 1px solid #24acac;
@@ -684,7 +714,11 @@
                             >
                               {{this.categories_v2.need.0.name}}
                             </td>
-                            {{/if}} {{#if this.categories_v2.offer.0}}
+                          </tr>
+                        </table>
+                        {{/if}} {{#if this.categories_v2.offer.0}}
+                        <table style="margin-top: 5px; margin-bottom: 10px">
+                          <tr>
                             <td
                               style="
                                 border: 1px solid #f19101;
@@ -697,10 +731,9 @@
                             >
                               {{this.categories_v2.offer.0.name}}
                             </td>
-                            {{/if}}
                           </tr>
                         </table>
-                        {{#if this.categories_v2.need.0}}
+                        {{/if}} {{#if this.categories_v2.need.0}}
                         <table
                           style="
                             background-color: #24acac;
@@ -738,6 +771,12 @@
                         </table>
                         {{/if}}
                       </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="height: 32px"
+                        background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/card_bg_bottom.png"
+                      ></td>
                     </tr>
                   </table>
                 </a>
@@ -888,8 +927,9 @@
                     target="_blank"
                     rel="noreferrer"
                     href="{{BaseUrl}}?t={{RecipientToken}}"
-                    >ensembl.fr</a
                   >
+                    ensembl.fr
+                  </a>
                 </p>
                 <p>
                   Notre adresse : <br />Le Résidentiel Numérique 168-170, rue
@@ -902,8 +942,9 @@
                     target="_blank"
                     rel="noreferrer"
                     href="{{BaseUrl}}/mon-profil/settings?t={{RecipientToken}}"
-                    >désinscrire</a
-                  >.
+                  >
+                    désinscrire.
+                  </a>
                 </p>
               </td>
             </tr>
