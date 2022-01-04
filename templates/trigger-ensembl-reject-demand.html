@@ -33,7 +33,7 @@
             <tr>
               <td
                 style="width: 100%; height: 182px; text-align: center"
-                background="../assets/backgrounds/nl-need-rejected-help/header.png"
+                background="../assets/backgrounds/nl-need-rejected-help/header_2.png"
               >
                 <h1
                   style="
@@ -50,13 +50,13 @@
             <tr>
               <td
                 style="text-align: center; padding: 20px 60px"
-                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/content_bg_600.png"
+                background="../assets/backgrounds/nl-need-notification/content_bg_600.png"
               >
                 <h2 style="margin: 0px; color: #24acac">
                   Vous vous êtes porté volontaire
                 </h2>
                 <p style="margin: 0px">
-                  pour aider <b>{nom, prénom}</b> et un
+                  pour aider <b>{{FirstName}}</b> et un
                   <b>autre voisin volontaire</b> a été choisi pour lui venir en
                   aide !
                 </p>
@@ -65,16 +65,14 @@
                     <td style="text-align: left; font-size: 12px">
                       <p>
                         Comme vous, plusieurs voisins se sont portés volontaire
-                        pour aider [Nom Voisin] ! Une prochaine fois peut-être !
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Neque, nunc aliquet ultricies phasellus gravida eu, ac.
-                        Aliquet euismod neque morbi nunc, consequat.
+                        pour aider {{FirstName}} !
                       </p>
+                      <p>Une prochaine fois peut-être !</p>
                     </td>
                     <td>
                       <img
                         width="250px"
-                        src="../assets/backgrounds/nl-need-rejected-help/icon.png"
+                        src="https://media.ensembl.fr/original/email/trigger-ensembl-reject-demand/icon.png"
                       />
                     </td>
                   </tr>
@@ -85,7 +83,7 @@
             <tr>
               <td
                 style="height: 33px"
-                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/content_bottom_600.png"
+                background="../assets/backgrounds/nl-need-rejected-help/bottom.png"
               ></td>
             </tr>
           </table>
@@ -245,7 +243,7 @@
                 <br />
                 <span style="font-family: 400">
                   <b
-                    >Copyright © 2021 Le Résidentiel Numérique, Tous droits
+                    >Copyright © 2022 Le Résidentiel Numérique, Tous droits
                     réservés.</b
                   ><br />
                   <i

@@ -32,8 +32,8 @@
           <table style="width: 100%" cellpadding="0" cellspacing="0">
             <tr>
               <td
-                style="width: 100%; height: 182px; text-align: center"
-                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/backgrounds/{{Category}}.png"
+                style="width: 100%; height: 193px; text-align: center"
+                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/{{Category}}.png"
               >
                 <h1
                   style="
@@ -50,7 +50,7 @@
             <tr>
               <td
                 style="text-align: center; padding: 20px 80px"
-                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/content_bg_600.png"
+                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/card_content_bg_2.png"
               >
                 <h2 style="margin: 0px; color: #f19101">
                   {{FirstName}}, {{Age}} ans
@@ -58,50 +58,60 @@
                 <span style="margin: 0px"> a besoin de votre aide pour </span>
                 {{#if `Category == "category.solidarity.homework_help"`}}
                 <span> <b>de l'aide aux devoirs</b> </span>
-                {{/if}} {{#if `Category == "category.solidarity.pet_sitting"`}}
+                {{elseif `Category == "category.solidarity.pet_sitting"`}}
                 <span> <b>de la garde d'animaux</b> </span>
-                {{/if}} {{#if `Category ==
-                "category.solidarity.administrative"`}}
+                {{elseif `Category == "category.solidarity.administrative"`}}
                 <span> <b>de l'aide administrative</b> </span>
-                {{/if}} {{#if `Category ==
-                "category.solidarity.mail_collection"`}}
+                {{elseif `Category == "category.solidarity.mail_collection"`}}
                 <span> <b>de l'aide en cas d'absence</b> </span>
-                {{/if}} {{#if `Category == "category.solidarity.diy"`}}
+                {{elseif `Category == "category.solidarity.diy"`}}
                 <span> <b>des petits travaux</b> </span>
-                {{/if}} {{#if `Category == "category.solidarity.discuss"`}}
+                {{elseif `Category == "category.solidarity.discuss"`}}
                 <span> <b>une visite de courtoisie</b> </span>
-                {{/if}} {{#if `Category == "category.solidarity.groceries"`}}
+                {{elseif `Category == "category.solidarity.groceries"`}}
                 <span> <b>de l'aide aux courses</b> </span>
-                {{/if}} {{#if `Category == "category.solidarity.walk"`}}
+                {{elseif `Category == "category.solidarity.walk"`}}
                 <span> <b>de l'accompagnement</b> </span>
-                {{/if}} {{#if `Category == "category.solidarity.other"`}}
+                {{elseif `Category == "category.solidarity.other"`}}
+                <span> <b>de l'aide</b> </span>
+                {{else}}
                 <span> <b>de l'aide</b> </span>
                 {{/if}}
                 <span>dans le quartier de <b>{{DistrictName}}</b>.</span>
                 <p><b>Êtes-vous disponible pour lui venir en aide ?</b></p>
-                <a href="`{{CardUrl}}`">
-                  <button
-                    style="
-                      background-color: #f19101;
-                      border: none;
-                      padding: 15px 30px;
-                      color: white;
-                      font-size: 20px;
-                      font-family: 'Work Sans', sans-serif;
-                      font-weight: bold;
-                      margin-top: 20px;
-                      cursor: pointer;
-                    "
-                  >
-                    VOIR LA DEMANDE
-                  </button>
+                <a href="`{{CardUrl}}`" style="text-decoration: none">
+                  <table style="margin: auto">
+                    <tr>
+                      <td
+                        style="
+                          background-color: #f19101;
+                          border: none;
+                          padding: 15px 30px;
+                          color: white;
+                          margin: auto 20px auto 0px;
+                          cursor: pointer;
+                          text-decoration: none;
+                        "
+                      >
+                        <span
+                          style="
+                            font-size: 20px;
+                            font-family: 'Work Sans', sans-serif;
+                            font-weight: bold;
+                          "
+                        >
+                          VOIR LA DEMANDE
+                        </span>
+                      </td>
+                    </tr>
+                  </table>
                 </a>
               </td>
             </tr>
             <tr>
               <td
                 style="height: 33px"
-                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/content_bottom_600.png"
+                background="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/card_content_bottom_2.png"
               ></td>
             </tr>
           </table>
@@ -246,8 +256,9 @@
                     target="_blank"
                     rel="noreferrer"
                     href="{{BaseUrl}}?t={{RecipientToken}}"
-                    >ensembl.fr</a
                   >
+                    ensembl.fr
+                  </a>
                 </p>
                 <p style="font-weight: 700">
                   Vous ne souhaitez pas recevoir d'emails ? Vous pouvez vous
@@ -255,19 +266,21 @@
                     target="_blank"
                     rel="noreferrer"
                     href="{{BaseUrl}}/mon-profil/settings?t={{RecipientToken}}"
-                    >désinscrire</a
-                  >.
+                  >
+                    désinscrire.
+                  </a>
                 </p>
                 <br />
                 <span style="font-family: 400">
-                  <b
-                    >Copyright © 2021 Le Résidentiel Numérique, Tous droits
-                    réservés.</b
-                  ><br />
-                  <i
-                    >Le Résidentiel Numérique 168-170, rue Victor Hugo
-                    Levallois-Perret 92300 France</i
-                  >
+                  <b>
+                    Copyright © 2022 Le Résidentiel Numérique, Tous droits
+                    réservés.
+                  </b>
+                  <br />
+                  <i>
+                    Le Résidentiel Numérique 168-170, rue Victor Hugo
+                    Levallois-Perret 92300 France
+                  </i>
                 </span>
               </td>
             </tr>
