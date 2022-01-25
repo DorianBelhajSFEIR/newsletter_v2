@@ -80,7 +80,7 @@
     >
       <tr>
         <td>
-          <table style="width: 600px; margin: auto">
+          <table style="width: 450px; margin: auto">
             <tr>
               <td width="120">
                 <img
@@ -195,19 +195,25 @@
                               background="assets/need_card_avatar_wrapper.png"
                             >
                               <tr>
-                                <td>
-                                  {{#if Demands.0.avatar.url.large}}
-                                  <img
-                                    width="120"
-                                    src="{{Demands.0.avatar.url.large}}"
-                                  />
-                                  {{else}}
-                                  <img
-                                    width="120"
-                                    src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                                  />
-                                  {{/if}}
-                                </td>
+                                {{#if Demands.0.avatar.url.large}}
+                                <td
+                                  style="
+                                    width: 120px;
+                                    height: 120px;
+                                    border-radius: 50%;
+                                  "
+                                  background="{{Demands.0.avatar.url.large}}"
+                                ></td>
+                                {{else}}
+                                <td
+                                  style="
+                                    width: 120px;
+                                    height: 120px;
+                                    border-radius: 50%;
+                                  "
+                                  background="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
+                                ></td>
+                                {{/if}}
                               </tr>
                             </table>
                             <h3
@@ -461,23 +467,28 @@
                       >
                         <table style="width: 100%">
                           <tr>
-                            <td style="width: 44px">
-                              {{#if this.publisher.avatar.url.large}}
-                              <img
-                                width="36px"
-                                src="{{this.publisher.avatar.url.large}}"
-                              />
-                              {{else}}
-                              <img
-                                width="36px"
-                                src="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                              />
-                              {{/if}}
-                            </td>
+                            {{#if this.publisher.avatar.url.large}}
+                            <td
+                              style="
+                                width: 44px;
+                                height: 44px;
+                                border-radius: 50%;
+                              "
+                              background="{{this.publisher.avatar.url.large}}"
+                            ></td>
+                            {{else}}
+                            <td
+                              style="
+                                width: 44px;
+                                height: 44px;
+                                border-radius: 50%;
+                              "
+                              background="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
+                            ></td>
+                            {{/if}}
                             <td>
                               <h3 style="margin: 0; font-size: 16px">
-                                {{this.publisher.name}},<br />
-                                {{#if this.places}}
+                                {{this.publisher.name}}, {{#if this.places}}
                                 {{this.places.0.address.locality}} {{/if}}
                               </h3>
                               {{#if `this.label == "need_help"`}}
@@ -787,15 +798,14 @@
                             </td>
                             <td>
                               <h3 style="margin: 0; font-size: 14px">
-                                {{this.first_name}},<br />
-                                {{#if this.places}}
+                                {{this.first_name}}, {{#if this.places}}
                                 {{this.places.0.address.locality}} {{/if}}
                               </h3>
                             </td>
                           </tr>
                         </table>
                         {{#if this.categories.need }}
-                        <table style="margin-top: 5px; margin-bottom: 10px">
+                        <table style="margin-top: 5px; margin-bottom: 5px">
                           <tr>
                             {{#if this.categories.need.0 }}
                             <td
@@ -806,7 +816,6 @@
                                 margin: 12px 0px;
                                 padding: 0px 10px;
                                 font-size: 12px;
-                                max-width: 100px;
                               "
                             >
                               {{this.categories.need.0.name}}
@@ -816,20 +825,7 @@
                               style="
                                 border: 1px solid #24acac;
                                 border-radius: 27px;
-                                color: #24acac;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
-                                max-width: 100px;
-                              "
-                            >
-                              {{this.categories.need.1.name}}
-                            </td>
-                            {{/if}} {{#if `this.categories.need.length > 2` }}
-                            <td
-                              style="
-                                border: 1px solid #24acac;
-                                border-radius: 27px;
+                                background-color: #24acac;
                                 color: white;
                                 margin: 12px 0px;
                                 padding: 0px 10px;
@@ -853,7 +849,6 @@
                                 margin: 12px 0px;
                                 padding: 0px 10px;
                                 font-size: 12px;
-                                max-width: 100px;
                               "
                             >
                               {{this.categories.offer.0.name}}
@@ -868,19 +863,6 @@
                                 padding: 0px 10px;
                                 font-size: 12px;
                                 max-width: 100px;
-                              "
-                            >
-                              {{this.categories.offer.1.name}}
-                            </td>
-                            {{/if}} {{#if `this.categories.offer.length > 2` }}
-                            <td
-                              style="
-                                border: 1px solid #f19101;
-                                border-radius: 27px;
-                                color: white;
-                                margin: 12px 0px;
-                                padding: 0px 10px;
-                                font-size: 12px;
                               "
                             >
                               ...
