@@ -35,7 +35,7 @@
             <tr>
               <td
                 style="background-color: #1a95c2"
-                background="../assets/nl-neighborhood-v5/700px/header.jpg"
+                background="../assets/nl-neighborhood-v5.1/header/banner.jpg"
               >
                 <table class="header" style="width: 700px; margin: auto">
                   <tr>
@@ -84,7 +84,7 @@
               color: #fff;
               vertical-align: middle;
             "
-            background="../assets/nl-neighborhood-v5/700px/city.jpg"
+            background="../assets/nl-neighborhood-v5.1/header/city.jpg"
           >
             <tr>
               <td>
@@ -147,7 +147,7 @@
                   <tr>
                     <td width="46">
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/orange_bubble_left.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/orange_bubble_left.jpg"
                         width="46px"
                       />
                     </td>
@@ -158,7 +158,7 @@
                     </td>
                     <td width="46">
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/orange_bubble_right.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/orange_bubble_right.jpg"
                         width="46px"
                       />
                     </td>
@@ -175,7 +175,7 @@
                           <td
                             width="100%"
                             height="507"
-                            background="../assets/nl-neighborhood-v5/700px/card.jpg"
+                            background="../assets/nl-neighborhood-v5.1/ccas_card/bg.jpg"
                           >
                             <table style="width: 100%; text-align: center">
                               <tr>
@@ -205,10 +205,9 @@
                                   <table
                                     style="
                                       margin: 0px auto 10px auto;
-                                      width: 135px;
-                                      height: 135px;
+                                      width: 120px;
+                                      height: 120px;
                                     "
-                                    background="assets/need_card_avatar_wrapper.png"
                                   >
                                     <tr>
                                       {{#if Demands.0.avatar.url.large}}
@@ -260,7 +259,13 @@
                                     "
                                   >
                                     <tr>
-                                      <td>{{Demands.0.category.name}}</td>
+                                      <td>
+                                        <img
+                                          width="15"
+                                          src="../assets/nl-neighborhood-v5.1/icons/orange/{{Demands.0.category.ID}}.jpg"
+                                        />
+                                        {{Demands.0.category.name}}
+                                      </td>
                                     </tr>
                                   </table>
                                 </td>
@@ -304,7 +309,7 @@
                   <tr>
                     <td width="46">
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/blue_bubble_left.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/blue_bubble_left.jpg"
                         width="46px"
                       />
                     </td>
@@ -313,7 +318,7 @@
                     </td>
                     <td width="46">
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/blue_bubble_right.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/blue_bubble_right.jpg"
                         width="46px"
                       />
                     </td>
@@ -329,7 +334,7 @@
                     <td
                       colspan="3"
                       height="27px"
-                      background="../assets/nl-neighborhood-v5/700px/push_cm_top.jpg"
+                      background="../assets/nl-neighborhood-v5.1/push_cm/top.jpg"
                     ></td>
                   </tr>
                   <tr>
@@ -344,7 +349,7 @@
                         <tr>
                           <td
                             width="20px"
-                            background="../assets/nl-neighborhood-v5/700px/push_cm_left.jpg"
+                            background="../assets/nl-neighborhood-v5.1/push_cm/image_left_shadow.jpg"
                           ></td>
                           <td
                             background="{{Pushes.0.medias.0.url.large}}"
@@ -357,7 +362,7 @@
                           ></td>
                           <td
                             width="20px"
-                            background="../assets/nl-neighborhood-v5/700px/push_cm_right.jpg"
+                            background="../assets/nl-neighborhood-v5.1/push_cm/image_right_shadow.jpg"
                           ></td>
                         </tr>
                       </table>
@@ -366,7 +371,7 @@
                   </tr>
                   <tr>
                     <td
-                      background="../assets/nl-neighborhood-v5/700px/push_cm_middle.jpg"
+                      background="../assets/nl-neighborhood-v5.1/push_cm/middle.jpg"
                       style="padding: 25px 45px; text-align: center"
                     >
                       {{#if Pushes.0.title }}
@@ -405,7 +410,7 @@
                   <tr>
                     <td
                       style="height: 33px"
-                      background="../assets/nl-neighborhood-v5/700px/push_cm_bottom.jpg"
+                      background="../assets/nl-neighborhood-v5.1/push_cm/bottom.jpg"
                     ></td>
                   </tr>
                 </table>
@@ -423,7 +428,7 @@
                   <tr>
                     <td>
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/green_bubble_left.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/green_bubble_left.jpg"
                         width="46px"
                       />
                     </td>
@@ -432,7 +437,7 @@
                     </td>
                     <td width="46">
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/green_bubble_right.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/green_bubble_right.jpg"
                         width="46px"
                       />
                     </td>
@@ -457,15 +462,15 @@
                             <td
                               style="
                                 height: 26px;
-                                background-image: url('../assets/nl-neighborhood-v5/700px/publication_top.jpg');
+                                background-image: url('../assets/nl-neighborhood-v5.1/publication/top.jpg');
                               "
-                              background="../assets/nl-neighborhood-v5/700px/publication_top.jpg"
+                              background="../assets/nl-neighborhood-v5.1/publication/top.jpg"
                             ></td>
                           </tr>
                           <tr>
                             <td
                               style="padding: 10px 40px"
-                              background="../assets/nl-neighborhood-v5/700px/publication_middle.jpg"
+                              background="../assets/nl-neighborhood-v5.1/publication/middle.jpg"
                             >
                               <table style="width: 100%">
                                 <tr>
@@ -547,7 +552,13 @@
                                       "
                                     >
                                       <tr>
-                                        <td>{{this.category.name}}</td>
+                                        <td>
+                                          <img
+                                            width="15"
+                                            src="../assets/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.ID}}.jpg"
+                                          />
+                                          {{this.category.name}}
+                                        </td>
                                       </tr>
                                     </table>
                                     {{elseif `this.label == "offer_help"`}}
@@ -563,7 +574,17 @@
                                       "
                                     >
                                       <tr>
-                                        <td>{{this.category.name}}</td>
+                                        <img
+                                          width="15"
+                                          src="../assets/nl-neighborhood-v5/700px/icons/green/{{Demands.0.category.ID}}.jpg"
+                                        />
+                                        <td>
+                                          <img
+                                            width="15"
+                                            src="../assets/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.ID}}.jpg"
+                                          />
+                                          {{this.category.name}}
+                                        </td>
                                       </tr>
                                     </table>
                                     {{/if}}
@@ -687,9 +708,9 @@
                             <td
                               style="
                                 height: 32px;
-                                background-image: url('../assets/nl-neighborhood-v5/700px/publication_bottom.jpg');
+                                background-image: url('../assets/nl-neighborhood-v5.1/publication/bottom.jpg');
                               "
-                              background="../assets/nl-neighborhood-v5/700px/publication_bottom.jpg"
+                              background="../assets/nl-neighborhood-v5.1/publication/bottom.jpg"
                             ></td>
                           </tr>
                         </table>
@@ -739,7 +760,7 @@
                   <tr>
                     <td>
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/blue_bubble_left.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/blue_bubble_left.jpg"
                         width="46px"
                       />
                     </td>
@@ -748,7 +769,7 @@
                     </td>
                     <td>
                       <img
-                        src="../assets/nl-neighborhood-v5/700px/blue_bubble_right.jpg"
+                        src="../assets/nl-neighborhood-v5.1/bubbles/blue_bubble_right.jpg"
                         width="46px"
                       />
                     </td>
@@ -771,17 +792,17 @@
                             <td
                               style="
                                 height: 16px;
-                                background-image: url(../assets/nl-neighborhood-v5/700px/neighbour_top_2.jpg);
+                                background-image: url(../assets/nl-neighborhood-v5.1/neighbour/top.jpg);
                               "
-                              background="../assets/nl-neighborhood-v5/700px/neighbour_top.jpg"
+                              background="../assets/nl-neighborhood-v5.1/neighbour/top.jpg"
                             ></td>
                           </tr>
                           <tr>
                             <td
-                              background="../assets/nl-neighborhood-v5/700px/neighbour_middle.jpg"
+                              background="../assets/nl-neighborhood-v5.1/neighbour/middle.jpg"
                               style="
                                 padding: 10px 30px 10px 30px;
-                                background-image: url(../assets/nl-neighborhood-v5/700px/neighbour_middle_2.jpg);
+                                background-image: url(../assets/nl-neighborhood-v5.1/neighbour/middle.jpg);
                               "
                             >
                               <table>
@@ -834,9 +855,29 @@
                                       max-width: 100px;
                                     "
                                   >
-                                    {{this.categories.need.0.name}}
+                                    <img
+                                      width="15"
+                                      src="../assets/nl-neighborhood-v5/700px/icons/orange/{{this.categories.need.0.ID}}"
+                                    />
                                   </td>
                                   {{/if}} {{#if this.categories.need.1 }}
+                                  <td
+                                    style="
+                                      border: 1px solid #24acac;
+                                      border-radius: 27px;
+                                      color: #24acac;
+                                      margin: 12px 0px;
+                                      padding: 3px 10px;
+                                      font-size: 12px;
+                                      max-width: 100px;
+                                    "
+                                  >
+                                    <img
+                                      width="15"
+                                      src="../assets/nl-neighborhood-v5/700px/icons/orange/{{this.categories.need.1.ID}}"
+                                    />
+                                  </td>
+                                  {{/if}} {{#if this.categories.need.2 }}
                                   <td
                                     style="
                                       background-color: #24acac;
@@ -870,9 +911,29 @@
                                       max-width: 100px;
                                     "
                                   >
-                                    {{this.categories.offer.0.name}}
+                                    <img
+                                      width="15"
+                                      src="../assets/nl-neighborhood-v5/700px/icons/orange/{{this.categories.offer.1.ID}}"
+                                    />
                                   </td>
                                   {{/if}} {{#if this.categories.offer.1 }}
+                                  <td
+                                    style="
+                                      border: 1px solid #f19101;
+                                      border-radius: 27px;
+                                      color: #f19101;
+                                      margin: 12px 0px;
+                                      padding: 3px 10px;
+                                      font-size: 12px;
+                                      max-width: 100px;
+                                    "
+                                  >
+                                    <img
+                                      width="15"
+                                      src="../assets/nl-neighborhood-v5/700px/icons/orange/{{this.categories.offer.1.ID}}"
+                                    />
+                                  </td>
+                                  {{/if}}{{#if this.categories.offer.2 }}
                                   <td
                                     style="
                                       background-color: #f19101;
@@ -934,7 +995,7 @@
                           <tr>
                             <td
                               style="height: 24px"
-                              background="../assets/nl-neighborhood-v5/700px/neighbour_bottom_2.jpg"
+                              background="../assets/nl-neighborhood-v5.1/neighbour/bottom.jpg"
                             ></td>
                           </tr>
                         </table>
