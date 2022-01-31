@@ -102,6 +102,7 @@
                           font-weight: 400;
                           margin-top: 0px;
                           margin-bottom: 20px;
+                          color: white;
                         "
                       >
                         Le réseau social de votre ville
@@ -152,7 +153,7 @@
                       />
                     </td>
                     <td>
-                      <h1 style="margin: 0px">
+                      <h1 style="margin: 0px; color: black">
                         Votre ville a besoin de vous !
                       </h1>
                     </td>
@@ -237,6 +238,7 @@
                                       font-weight: 700;
                                       margin: 0;
                                       line-height: 19px;
+                                      color: black;
                                     "
                                   >
                                     {{Demands.0.needer.name}} {{#if
@@ -245,7 +247,11 @@
                                     {{/if}}
                                   </h3>
                                   <span
-                                    style="font-size: 10px; line-height: 11px"
+                                    style="
+                                      font-size: 10px;
+                                      line-height: 11px;
+                                      color: black;
+                                    "
                                     >a besoin d'aide
                                   </span>
                                   <table
@@ -314,7 +320,7 @@
                       />
                     </td>
                     <td>
-                      <h1 style="margin: 0px">Actualités</h1>
+                      <h1 style="margin: 0px; color: black">Actualités</h1>
                     </td>
                     <td width="46">
                       <img
@@ -375,9 +381,11 @@
                       style="padding: 25px 45px; text-align: center"
                     >
                       {{#if Pushes.0.title }}
-                      <h3 style="margin-top: 0px">{{Pushes.0.title}}</h3>
+                      <h3 style="margin-top: 0px; color: black">
+                        {{Pushes.0.title}}
+                      </h3>
                       {{/if}} {{#if Pushes.0.text }}
-                      <p>{{Pushes.0.text}}</p>
+                      <p style="color: black">{{Pushes.0.text}}</p>
                       {{/if}}
                       <a
                         href="{{BaseUrl}}/actualites?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
@@ -433,7 +441,9 @@
                       />
                     </td>
                     <td>
-                      <h1 style="margin: 0px">Du nouveau sur le réseau</h1>
+                      <h1 style="margin: 0px; color: black">
+                        Du nouveau sur le réseau
+                      </h1>
                     </td>
                     <td width="46">
                       <img
@@ -496,7 +506,13 @@
                                   ></td>
                                   {{/if}}
                                   <td>
-                                    <h3 style="margin: 0; font-size: 16px">
+                                    <h3
+                                      style="
+                                        margin: 0;
+                                        font-size: 16px;
+                                        color: black;
+                                      "
+                                    >
                                       {{this.publisher.name}}, {{#if
                                       this.places}}
                                       {{this.places.0.address.locality}} {{/if}}
@@ -765,7 +781,9 @@
                       />
                     </td>
                     <td>
-                      <h1 style="margin: 0px">Vous pouvez vous entraider</h1>
+                      <h1 style="margin: 0px; color: black">
+                        Vous pouvez vous entraider
+                      </h1>
                     </td>
                     <td>
                       <img
@@ -831,7 +849,13 @@
                                   ></td>
                                   {{/if}}
                                   <td>
-                                    <h3 style="margin: 0; font-size: 14px">
+                                    <h3
+                                      style="
+                                        margin: 0;
+                                        font-size: 14px;
+                                        color: black;
+                                      "
+                                    >
                                       {{this.first_name}}, {{#if this.places}}
                                       {{this.places.0.address.locality}} {{/if}}
                                     </h3>
@@ -1048,7 +1072,9 @@
                         margin-bottom: 16px;
                       "
                     >
-                      <h2>A très vite sur le réseau Ensembl' !</h2>
+                      <h2 style="color: black">
+                        A très vite sur le réseau Ensembl' !
+                      </h2>
                     </td>
                   </tr>
                   <tr>
