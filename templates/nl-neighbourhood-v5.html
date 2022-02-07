@@ -37,7 +37,7 @@
                 style="background-color: #1a95c2"
                 background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/header/banner.jpg"
               >
-                <table class="header" style="width: 700px; margin: auto">
+                <table class="header" style="width: 680px; margin: auto">
                   <tr>
                     <td style="width: 44px">
                       <img
@@ -78,6 +78,8 @@
             </tr>
           </table>
           <table
+            cellpadding="0"
+            cellspacing="0"
             style="
               width: 100%;
               height: 210px;
@@ -88,7 +90,11 @@
           >
             <tr>
               <td>
-                <table style="width: 490px; margin: auto" cellspacing="40px">
+                <table
+                  cellpadding="0"
+                  cellspacing="40px"
+                  style="width: 490px; margin: auto"
+                >
                   <tr>
                     <td>
                       <img
@@ -112,6 +118,8 @@
                         style="text-decoration: none"
                       >
                         <table
+                          cellpadding="0"
+                          cellspacing="0"
                           style="
                             background-color: #1a95c2;
                             padding: 8px 16px;
@@ -133,7 +141,7 @@
           <table
             cellpadding="0"
             cellspacing="0"
-            style="margin: auto; padding: 40px 20px"
+            style="margin: auto; padding: 40px 10px"
           >
             <tr>
               <td>
@@ -165,139 +173,136 @@
                     </td>
                   </tr>
                 </table>
-                <table cellpadding="0" cellspacing="0" style="width: 100%">
+                <table
+                  width="680"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="text-align: center; margin: auto"
+                >
                   <tr>
-                    <td>
+                    <td
+                      width="100%"
+                      height="507"
+                      background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/ccas_card/bg.jpg"
+                    >
                       <table
-                        width="680"
-                        style="text-align: center; margin: auto"
+                        cellpadding="0"
+                        cellspacing="0"
+                        style="width: 100%; text-align: center"
                       >
                         <tr>
-                          <td
-                            width="100%"
-                            height="507"
-                            background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/ccas_card/bg.jpg"
-                          >
-                            <table style="width: 100%; text-align: center">
-                              <tr>
-                                <td>
-                                  <h2
-                                    style="
-                                      font-weight: 500;
-                                      font-size: 24px;
-                                      color: white;
-                                      margin: 15px auto 0px auto;
-                                    "
-                                  >
-                                    Offrez un peu de temps pour aider <br />
-                                    {{Demands.0.needer.name}}
-                                  </h2>
-                                </td>
-                              </tr>
-                            </table>
-                            <table
-                              style="width: 326px; height: 326px; margin: auto"
+                          <td>
+                            <h2
+                              style="
+                                font-weight: 500;
+                                font-size: 24px;
+                                color: white;
+                                margin: 15px auto 0px auto;
+                              "
                             >
-                              <tr>
-                                <td
-                                  width="326"
-                                  background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/bubble.png"
-                                >
-                                  <table
-                                    style="
-                                      margin: 0px auto 10px auto;
-                                      width: 120px;
-                                      height: 120px;
-                                    "
-                                  >
-                                    <tr>
-                                      {{#if Demands.0.avatar.url.large}}
-                                      <td
-                                        width="120"
-                                        background="{{Demands.0.avatar.url.large}}"
-                                        style="
-                                          border-radius: 50%;
-                                          background-size: cover;
-                                        "
-                                      ></td>
-                                      {{else}}
-                                      <td
-                                        width="120"
-                                        background="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                                        style="
-                                          border-radius: 50%;
-                                          background-size: cover;
-                                        "
-                                      ></td>
-                                      {{/if}}
-                                    </tr>
-                                  </table>
-                                  <h3
-                                    style="
-                                      font-size: 14px;
-                                      font-weight: 700;
-                                      margin: 0;
-                                      line-height: 19px;
-                                      color: black;
-                                    "
-                                  >
-                                    {{Demands.0.needer.name}} {{#if
-                                    Demands.0.places}},
-                                    {{Demands.0.places.0.address.locality}}
-                                    {{/if}}
-                                  </h3>
-                                  <span
-                                    style="
-                                      font-size: 10px;
-                                      line-height: 11px;
-                                      color: black;
-                                    "
-                                    >a besoin d'aide
-                                  </span>
-                                  <table
-                                    style="
-                                      border: 1px solid #f19101;
-                                      border-radius: 27px;
-                                      color: #f19101;
-                                      margin: 12px auto;
-                                      padding: 0px 10px;
-                                      font-size: 12px;
-                                    "
-                                  >
-                                    <tr>
-                                      <td>
-                                        <img
-                                          width="15"
-                                          src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{Demands.0.category.ID}}.jpg"
-                                        />
-                                        {{Demands.0.category.name}}
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                            <a href="#" style="text-decoration: none">
-                              <table
-                                style="
-                                  background-color: white;
-                                  color: #f19101;
-                                  border-radius: 4px;
-                                  padding: 10px 40px;
-                                  font-weight: 700;
-                                  text-transform: uppercase;
-                                  font-size: 14px;
-                                  margin: 0px auto 23px auto;
-                                "
-                              >
-                                <tr>
-                                  <td>Je propose mon aide</td>
-                                </tr>
-                              </table>
-                            </a>
+                              Offrez un peu de temps pour aider <br />
+                              {{Demands.0.needer.name}}
+                            </h2>
                           </td>
                         </tr>
                       </table>
+                      <table style="width: 326px; height: 326px; margin: auto">
+                        <tr>
+                          <td
+                            width="326"
+                            background="https://media.ensembl.fr/original/email/nl-v4/backgrounds/bubble.png"
+                          >
+                            <table
+                              style="
+                                margin: 0px auto 10px auto;
+                                width: 120px;
+                                height: 120px;
+                              "
+                            >
+                              <tr>
+                                {{#if Demands.0.avatar.url.large}}
+                                <td
+                                  width="120"
+                                  background="{{Demands.0.avatar.url.large}}"
+                                  style="
+                                    border-radius: 50%;
+                                    background-size: cover;
+                                  "
+                                ></td>
+                                {{else}}
+                                <td
+                                  width="120"
+                                  background="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
+                                  style="
+                                    border-radius: 50%;
+                                    background-size: cover;
+                                  "
+                                ></td>
+                                {{/if}}
+                              </tr>
+                            </table>
+                            <h3
+                              style="
+                                font-size: 14px;
+                                font-weight: 700;
+                                margin: 0;
+                                line-height: 19px;
+                                color: black;
+                              "
+                            >
+                              {{Demands.0.needer.name}} {{#if
+                              Demands.0.places}},
+                              {{Demands.0.places.0.address.locality}} {{/if}}
+                            </h3>
+                            <span
+                              style="
+                                font-size: 10px;
+                                line-height: 11px;
+                                color: black;
+                              "
+                              >a besoin d'aide
+                            </span>
+                            <table
+                              style="
+                                border: 1px solid #f19101;
+                                border-radius: 27px;
+                                color: #f19101;
+                                margin: 12px auto;
+                                padding: 0px 10px;
+                                font-size: 12px;
+                              "
+                            >
+                              <tr>
+                                <td>
+                                  <img
+                                    width="15"
+                                    src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{Demands.0.category.translation}}.jpg"
+                                  />
+                                  {{Demands.0.category.name}}
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <a href="#" style="text-decoration: none">
+                        <table
+                          style="
+                            background-color: white;
+                            color: #f19101;
+                            border-radius: 4px;
+                            padding: 10px 40px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            margin: 0px auto 23px auto;
+                          "
+                        >
+                          <tr>
+                            <td>Je propose mon aide</td>
+                          </tr>
+                        </table>
+                      </a>
                     </td>
                   </tr>
                 </table>
@@ -310,7 +315,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   width="640"
-                  style="text-align: center; margin: auto; margin-bottom: 20px"
+                  style="text-align: center; margin: 20px auto"
                 >
                   <tr>
                     <td width="46">
@@ -431,7 +436,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   width="640"
-                  style="text-align: center; margin: auto; margin-bottom: 20px"
+                  style="text-align: center; margin: 20px auto"
                 >
                   <tr>
                     <td>
@@ -455,16 +460,16 @@
                 </table>
 
                 {{#each Publications}}
-                <table style="width: 640px">
+                <table cellspacing="0" cellpadding="0" style="width: 680px">
                   <tr>
-                    <td style="padding: 0px 5px">
+                    <td>
                       <a
                         href="{{BaseUrl}}/publication/{{this.id}}?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
                         target="_blank"
                         style="color: black; text-decoration: none"
                       >
                         <table
-                          style="width: 640px; height: 100%"
+                          style="width: 680px"
                           cellpadding="0"
                           cellspacing="0"
                         >
@@ -491,6 +496,7 @@
                                       width: 36px;
                                       height: 36px;
                                       background-size: cover;
+                                      border-radius: 50%;
                                     "
                                     background="{{this.publisher.avatar.url.large}}"
                                   ></td>
@@ -501,11 +507,12 @@
                                       width: 36px;
                                       height: 36px;
                                       background-size: cover;
+                                      border-radius: 50%;
                                     "
                                     background="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
                                   ></td>
                                   {{/if}}
-                                  <td>
+                                  <td style="padding-left: 10px">
                                     <h3
                                       style="
                                         margin: 0;
@@ -552,26 +559,23 @@
                                     </p>
                                     {{/if}}
                                   </td>
-                                </tr>
-                                <tr>
-                                  <td colspan="2">
+                                  <td style="width: 230px">
                                     {{#if `this.label == "need_help"`}}
                                     <table
                                       style="
                                         border: 1px solid #f19101;
                                         color: #f19101;
                                         border-radius: 27px;
-                                        margin-top: 12px;
-                                        margin-bottom: 12px;
                                         padding: 0px 10px;
                                         font-size: 12px;
+                                        float: right;
                                       "
                                     >
                                       <tr>
                                         <td>
                                           <img
                                             width="15"
-                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.ID}}.jpg"
+                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.translation}}.jpg"
                                           />
                                           {{this.category.name}}
                                         </td>
@@ -583,21 +587,16 @@
                                         border: 1px solid #24acac;
                                         color: #24acac;
                                         border-radius: 27px;
-                                        margin-top: 12px;
-                                        margin-bottom: 12px;
                                         padding: 0px 10px;
                                         font-size: 12px;
+                                        float: right;
                                       "
                                     >
                                       <tr>
-                                        <img
-                                          width="15"
-                                          src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/green/{{Demands.0.category.ID}}.jpg"
-                                        />
                                         <td>
                                           <img
                                             width="15"
-                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.ID}}.jpg"
+                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.translation}}.jpg"
                                           />
                                           {{this.category.name}}
                                         </td>
@@ -607,58 +606,33 @@
                                   </td>
                                 </tr>
                                 <tr>
-                                  {{#if `this.label == "need_help"`}}
-                                  <td colspan="2">
+                                  <td colspan="3" style="padding: 20px 0px">
                                     <span style="color: #727272">
-                                      {{this.text}}<br />
-
-                                      <strong style="color: #727272"
-                                        >Voir plus
-                                      </strong>
+                                      {{this.text}}
                                     </span>
                                   </td>
-                                  {{elseif `this.label == "offer_help"`}}
-                                  <td colspan="2">
-                                    <span style="color: #727272">
-                                      {{this.text}}<br />
-
-                                      <strong style="color: #727272"
-                                        >Voir plus
-                                      </strong>
-                                    </span>
-                                  </td>
-                                  {{else}}
-                                  <td colspan="2">
-                                    <span style="color: #727272">
-                                      {{this.text}}<br />
-
-                                      <strong style="color: #727272"
-                                        >Voir plus
-                                      </strong>
-                                    </span>
-                                  </td>
-                                  {{/if}}
                                 </tr>
                                 <tr>
-                                  <td colspan="2">
+                                  <td colspan="3">
                                     <hr
                                       style="
-                                        border: 1px solid #ccc;
-                                        margin: 20px 0px;
+                                        border: 1px solid #ddd;
+                                        margin-bottom: 20px;
+                                        margin-top: 0px;
                                       "
                                     />
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td colspan="2">
+                                  <td colspan="3">
                                     {{#if `this.label == "need_help"`}}
                                     <table
                                       style="
                                         border-radius: 4px;
                                         color: white;
                                         text-align: center;
-                                        padding: 15px 17px;
-                                        width: 100%;
+                                        padding: 15px 50px;
+                                        margin: auto;
                                         font-size: 12px;
                                         font-weight: 700;
                                         text-transform: uppercase;
@@ -678,8 +652,8 @@
                                         border-radius: 4px;
                                         color: white;
                                         text-align: center;
-                                        padding: 15px 17px;
-                                        width: 100%;
+                                        padding: 15px 50px;
+                                        margin: auto;
                                         font-size: 12px;
                                         font-weight: 700;
                                         text-transform: uppercase;
@@ -699,8 +673,8 @@
                                         border-radius: 4px;
                                         color: white;
                                         text-align: center;
-                                        padding: 15px 17px;
-                                        width: 100%;
+                                        padding: 15px 50px;
+                                        margin: auto;
                                         font-size: 12px;
                                         font-weight: 700;
                                         text-transform: uppercase;
@@ -742,7 +716,8 @@
                   <table
                     style="
                       width: 640px;
-                      margin: 20px auto;
+                      margin: 0px auto;
+                      margin-bottom: 20px;
                       text-align: center;
                       border-radius: 10px;
                       border: 1px solid #1a95c2;
@@ -771,7 +746,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   width="640"
-                  style="text-align: center; margin: auto; margin-bottom: 20px"
+                  style="text-align: center; margin: 30px auto"
                 >
                   <tr>
                     <td>
@@ -793,241 +768,240 @@
                     </td>
                   </tr>
                 </table>
-                {{#each Neighbours}}
-                <table style="width: 330px; float: left">
+                <table
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="width: 660px; margin: auto"
+                >
                   <tr>
                     <td>
-                      <a
-                        href="{{BaseUrl}}/voisin/{{this.id}}?t={{RecipientToken}}"
-                        style="color: black; text-decoration: none"
+                      {{#each Neighbours}}
+                      <table
+                        cellpadding="0"
+                        cellspacing="0"
+                        style="width: 330px; float: left; margin: 5px 0px"
                       >
-                        <table
-                          style="width: 100%"
-                          cellpadding="0"
-                          cellspacing="0"
-                        >
-                          <tr>
-                            <td
-                              style="
-                                height: 16px;
-                                background-image: url(https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/top.jpg);
-                              "
-                              background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/top.jpg"
-                            ></td>
-                          </tr>
-                          <tr>
-                            <td
-                              background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/middle.jpg"
-                              style="
-                                padding: 10px 30px 10px 30px;
-                                background-image: url(https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/middle.jpg);
-                              "
+                        <tr>
+                          <td>
+                            <a
+                              href="{{BaseUrl}}/voisin/{{this.id}}?t={{RecipientToken}}"
+                              style="color: black; text-decoration: none"
                             >
-                              <table>
-                                <tr>
-                                  {{#if this.avatar.url.large}}
-                                  <td
-                                    width="36px"
-                                    style="
-                                      height: 36px;
-                                      vertical-align: baseline;
-                                      border-radius: 50%;
-                                      background-size: cover;
-                                    "
-                                    background="{{this.avatar.url.large}}"
-                                  ></td>
-                                  {{else}}
-                                  <td
-                                    width="36px"
-                                    style="
-                                      height: 36px;
-                                      vertical-align: baseline;
-                                      border-radius: 50%;
-                                      background-size: cover;
-                                    "
-                                    background="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
-                                  ></td>
-                                  {{/if}}
-                                  <td>
-                                    <h3
-                                      style="
-                                        margin: 0;
-                                        font-size: 14px;
-                                        color: black;
-                                      "
-                                    >
-                                      {{this.first_name}}, {{#if this.places}}
-                                      {{this.places.0.address.locality}} {{/if}}
-                                    </h3>
-                                  </td>
-                                </tr>
-                              </table>
-                              {{#if this.categories.need }}
                               <table
-                                style="margin-top: 5px; margin-bottom: 10px"
+                                style="width: 100%"
+                                cellpadding="0"
+                                cellspacing="0"
                               >
                                 <tr>
-                                  {{#if this.categories.need.0 }}
                                   <td
                                     style="
-                                      border: 1px solid #24acac;
-                                      border-radius: 27px;
-                                      color: #24acac;
-                                      margin: 12px 0px;
-                                      padding: 3px 10px;
-                                      font-size: 12px;
-                                      max-width: 100px;
+                                      height: 16px;
+                                      background-image: url(https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/top.jpg);
                                     "
-                                  >
-                                    <img
-                                      width="15"
-                                      src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.need.0.ID}}"
-                                    />
-                                  </td>
-                                  {{/if}} {{#if this.categories.need.1 }}
-                                  <td
-                                    style="
-                                      border: 1px solid #24acac;
-                                      border-radius: 27px;
-                                      color: #24acac;
-                                      margin: 12px 0px;
-                                      padding: 3px 10px;
-                                      font-size: 12px;
-                                      max-width: 100px;
-                                    "
-                                  >
-                                    <img
-                                      width="15"
-                                      src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.need.1.ID}}"
-                                    />
-                                  </td>
-                                  {{/if}} {{#if this.categories.need.2 }}
-                                  <td
-                                    style="
-                                      background-color: #24acac;
-                                      border: 1px solid #24acac;
-                                      border-radius: 27px;
-                                      color: white;
-                                      margin: 12px 0px;
-                                      padding: 3px 5px;
-                                      font-size: 12px;
-                                    "
-                                  >
-                                    ...
-                                  </td>
-                                  {{/if}}
+                                    background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/top.jpg"
+                                  ></td>
                                 </tr>
-                              </table>
-                              {{/if}} {{#if this.categories.offer}}
-                              <table
-                                style="margin-top: 5px; margin-bottom: 10px"
-                              >
                                 <tr>
-                                  {{#if this.categories.offer.0 }}
                                   <td
+                                    background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/middle.jpg"
                                     style="
-                                      border: 1px solid #f19101;
-                                      border-radius: 27px;
-                                      color: #f19101;
-                                      margin: 12px 0px;
-                                      padding: 3px 10px;
-                                      font-size: 12px;
-                                      max-width: 100px;
+                                      padding: 10px 30px 10px 30px;
+                                      background-image: url(https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/middle.jpg);
                                     "
                                   >
-                                    <img
-                                      width="15"
-                                      src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.offer.1.ID}}"
-                                    />
+                                    <table cellpadding="5px" cellspacing="5px">
+                                      <tr>
+                                        <td>
+                                          <table>
+                                            <tr>
+                                              {{#if this.avatar.url.large}}
+                                              <td rowspan="2" width="64px">
+                                                <table>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        width: 64px;
+                                                        height: 64px;
+                                                        vertical-align: baseline;
+                                                        border-radius: 50%;
+                                                        background-size: cover;
+                                                      "
+                                                      background="{{this.avatar.url.large}}"
+                                                    ></td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                              {{else}}
+                                              <td rowspan="2" width="64px">
+                                                <table>
+                                                  <tr>
+                                                    <td
+                                                      style="
+                                                        width: 64px;
+                                                        height: 64px;
+                                                        vertical-align: baseline;
+                                                        border-radius: 50%;
+                                                        background-size: cover;
+                                                      "
+                                                      background="https://media.ensembl.fr/original/email/mr8/avatar-bleu.png"
+                                                    ></td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                              {{/if}}
+                                              <td style="padding-left: 10px">
+                                                <h3
+                                                  style="
+                                                    margin: 0px;
+                                                    font-size: 14px;
+                                                    color: black;
+                                                  "
+                                                >
+                                                  {{this.first_name}}, {{#if
+                                                  this.places}}
+                                                  {{this.places.0.address.locality}}
+                                                  {{/if}}
+                                                </h3>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td>
+                                                <table
+                                                  cellpadding="5px"
+                                                  cellspacing="5px"
+                                                >
+                                                  <tr>
+                                                    {{#if this.categories.need.0
+                                                    }}
+                                                    <td
+                                                      style="
+                                                        border: 1px solid
+                                                          #24acac;
+                                                        border-radius: 27px;
+                                                        color: #24acac;
+                                                        padding: 5px 7px;
+                                                      "
+                                                    >
+                                                      <img
+                                                        width="15"
+                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.need.0.translation}}.jpg"
+                                                      />
+                                                    </td>
+                                                    {{/if}} {{#if
+                                                    this.categories.need.1 }}
+                                                    <td
+                                                      style="
+                                                        background-color: #24acac;
+                                                        border: 1px solid
+                                                          #24acac;
+                                                        border-radius: 27px;
+                                                        color: white;
+                                                        padding: 5px 7px;
+                                                      "
+                                                    >
+                                                      ...
+                                                    </td>
+                                                    {{/if}} {{#if
+                                                    this.categories.offer.0 }}
+                                                    <td
+                                                      style="
+                                                        border: 1px solid
+                                                          #f19101;
+                                                        border-radius: 27px;
+                                                        color: #f19101;
+                                                        padding: 5px 7px;
+                                                      "
+                                                    >
+                                                      <img
+                                                        width="15"
+                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.offer.1.translation}}.jpg"
+                                                      />
+                                                    </td>
+                                                    {{/if}} {{#if
+                                                    this.categories.offer.1 }}
+                                                    <td
+                                                      style="
+                                                        background-color: #f19101;
+                                                        border: 1px solid
+                                                          #f19101;
+                                                        border-radius: 27px;
+                                                        color: white;
+                                                        padding: 5px 7px;
+                                                      "
+                                                    >
+                                                      ...
+                                                    </td>
+                                                    {{/if}}
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <table style="width: 100%">
+                                            <tr>
+                                              {{#if this.categories.need}}
+                                              <td
+                                                style="
+                                                  background-color: #24acac;
+                                                  border-radius: 4px;
+                                                  color: white;
+                                                  text-align: center;
+                                                  padding: 15px 17px;
+                                                  margin: 5px 0px;
+                                                  width: 50%;
+                                                  font-size: 10px;
+                                                  font-weight: 700;
+                                                  text-transform: uppercase;
+                                                "
+                                              >
+                                                Proposer de l'aide
+                                              </td>
+                                              {{/if}} {{#if
+                                              this.categories.offer}}
+                                              <td
+                                                style="
+                                                  background-color: #f19101;
+                                                  border-radius: 4px;
+                                                  color: white;
+                                                  text-align: center;
+                                                  padding: 15px 17px;
+                                                  margin: 5px 0px;
+                                                  width: 50%;
+                                                  font-size: 10px;
+                                                  font-weight: 700;
+                                                  text-transform: uppercase;
+                                                "
+                                              >
+                                                Demander de l'aide
+                                              </td>
+                                              {{/if}}
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
                                   </td>
-                                  {{/if}} {{#if this.categories.offer.1 }}
-                                  <td
-                                    style="
-                                      border: 1px solid #f19101;
-                                      border-radius: 27px;
-                                      color: #f19101;
-                                      margin: 12px 0px;
-                                      padding: 3px 10px;
-                                      font-size: 12px;
-                                      max-width: 100px;
-                                    "
-                                  >
-                                    <img
-                                      width="15"
-                                      src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.offer.1.ID}}"
-                                    />
-                                  </td>
-                                  {{/if}}{{#if this.categories.offer.2 }}
-                                  <td
-                                    style="
-                                      background-color: #f19101;
-                                      border: 1px solid #f19101;
-                                      border-radius: 27px;
-                                      color: white;
-                                      margin: 12px 0px;
-                                      padding: 3px 5px;
-                                      font-size: 12px;
-                                    "
-                                  >
-                                    ...
-                                  </td>
-                                  {{/if}}
                                 </tr>
-                              </table>
-                              {{/if}}
-                              <table>
                                 <tr>
-                                  {{#if this.categories.need}}
                                   <td
-                                    style="
-                                      background-color: #24acac;
-                                      border-radius: 4px;
-                                      color: white;
-                                      text-align: center;
-                                      padding: 15px 17px;
-                                      margin: 5px 0px;
-                                      width: 50%;
-                                      font-size: 10px;
-                                      font-weight: 700;
-                                      text-transform: uppercase;
-                                    "
-                                  >
-                                    Proposer de l'aide
-                                  </td>
-                                  {{/if}} {{#if this.categories.offer}}
-                                  <td
-                                    style="
-                                      background-color: #f19101;
-                                      border-radius: 4px;
-                                      color: white;
-                                      text-align: center;
-                                      padding: 15px 17px;
-                                      margin: 5px 0px;
-                                      width: 50%;
-                                      font-size: 10px;
-                                      font-weight: 700;
-                                      text-transform: uppercase;
-                                    "
-                                  >
-                                    Demander de l'aide
-                                  </td>
-                                  {{/if}}
+                                    style="height: 24px"
+                                    background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/bottom.jpg"
+                                  ></td>
                                 </tr>
                               </table>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td
-                              style="height: 24px"
-                              background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/bottom.jpg"
-                            ></td>
-                          </tr>
-                        </table>
-                      </a>
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                      {{/each}}
                     </td>
                   </tr>
                 </table>
-                {{/each}} {{#if NeighbourCount}}
+                {{#if NeighbourCount}}
                 <a
                   href="{{BaseUrl}}/mes-voisins?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
                   target="_blank"
@@ -1036,7 +1010,8 @@
                   <table
                     style="
                       width: 640px;
-                      margin: 30px auto;
+                      margin: 0px auto;
+                      margin-bottom: 40px;
                       text-align: center;
                       border-radius: 10px;
                       border: 1px solid #1a95c2;
@@ -1060,7 +1035,6 @@
                 <!-- /VOUS POUVEZ VOUS ENTRAIDER -->
 
                 <!-- A TRES VITE SUR LE RESEAU ENSEMBL' -->
-
                 <table style="width: 640px; text-align: center; margin: auto">
                   <tr>
                     <td
