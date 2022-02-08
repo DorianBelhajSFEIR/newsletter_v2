@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Newsletter Ensembl' [DEV]</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      margin: 0 auto;
+      padding: 0;
+      width: 600px;
+      margin-top: 20px;
+      font-family: 'Work Sans', sans-serif;
+    "
+  >
+    <table cellpadding="0" cellspacing="0">
+      <tr>
+        <td style="margin: auto; text-align: center">
+          <img
+            width="200px"
+            style="margin-bottom: 20px"
+            src="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/logo_ensembl.png"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="width: 100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td
+                style="width: 100%; height: 182px; text-align: center"
+                background="https://media.ensembl.fr/original/email/trigger-ensembl-reject-demand/header_2.png"
+              >
+                <h1
+                  style="
+                    color: white;
+                    margin-top: 0px;
+                    margin-bottom: 40px;
+                    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+                  "
+                >
+                  Merci de votre solidarité !
+                </h1>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="text-align: center; padding: 20px 60px"
+                background="https://media.ensembl.fr/original/email/trigger-ensembl-reject-demand/content.png"
+              >
+                <h2 style="margin: 0px; color: #24acac">
+                  Vous avez aidé {{FirstName}},
+                </h2>
+                <span style="margin: 0px"> pour</span> {{#if `Category ==
+                "category.solidarity.homework_help"`}}
+                <span> <b>de l'aide aux devoirs</b> </span>
+                {{elseif `Category == "category.solidarity.pet_sitting"`}}
+                <span> <b>de la garde d'animaux</b> </span>
+                {{elseif `Category == "category.solidarity.administrative"`}}
+                <span> <b>de l'aide administrative</b> </span>
+                {{elseif `Category == "category.solidarity.mail_collection"`}}
+                <span> <b>de l'aide en cas d'absence</b> </span>
+                {{elseif `Category == "category.solidarity.diy"`}}
+                <span> <b>des petits travaux</b> </span>
+                {{elseif `Category == "category.solidarity.discuss"`}}
+                <span> <b>une visite de courtoisie</b> </span>
+                {{elseif `Category == "category.solidarity.groceries"`}}
+                <span> <b>de l'aide aux courses</b> </span>
+                {{elseif `Category == "category.solidarity.walk"`}}
+                <span> <b>de l'accompagnement</b> </span>
+                {{elseif `Category == "category.solidarity.other"`}}
+                <span> <b>de l'aide</b> </span>
+                {{else}}
+                <span> <b>de l'aide</b> </span>
+                {{/if}}
+                <span
+                  >et cette personne est heureuse de vous avoir fait
+                  <b>confiance</b>.
+                </span>
+                <table style="margin: 20px 0px" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="text-align: left; font-size: 12px">
+                      <p>
+                        Comme vous, plusieurs voisins se sont portés volontaire
+                        pour aider {{FirstName}} !
+                      </p>
+                    </td>
+                    <td>
+                      <img
+                        width="250px"
+                        src="https://media.ensembl.fr/original/email/trigger-ensembl-reject-demand/icon.png"
+                      />
+                    </td>
+                  </tr>
+                </table>
+                <h2 style="margin: 0px; color: #24acac">Merci !</h2>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="height: 33px"
+                background="https://media.ensembl.fr/original/email/trigger-ensembl-reject-demand/bottom.png"
+              ></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <!-- A TRES VITE SUR LE RESEAU ENSEMBL' -->
+          <table
+            style="
+              width: 100%;
+              text-align: center;
+              margin-top: 30px;
+              margin-bottom: 16px;
+              font-family: 'Work Sans', sans-serif;
+            "
+          >
+            <tr>
+              <td>
+                <h2>Et à très vite sur le réseau Ensembl' !</h2>
+              </td>
+            </tr>
+          </table>
+          <table
+            style="
+              font-family: 'Work Sans', sans-serif;
+              width: 100%;
+              text-align: center;
+            "
+          >
+            <tr>
+              <td>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="{{BaseUrl}}?t={{RecipientToken}}"
+                  style="text-decoration: none"
+                >
+                  <img
+                    src="https://media.ensembl.fr/original/email/nl-v4/sn_icons/website.png"
+                    width="52px"
+                  />
+                </a>
+              </td>
+              <td>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.linkedin.com/company/ensemblfr"
+                  style="text-decoration: none"
+                >
+                  <img
+                    src="https://media.ensembl.fr/original/email/nl-v4/sn_icons/linkedin.png"
+                    width="52px"
+                  />
+                </a>
+              </td>
+              <td>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.facebook.com/ensemblfr"
+                  style="text-decoration: none"
+                >
+                  <img
+                    src="https://media.ensembl.fr/original/email/nl-v4/sn_icons/facebook.png"
+                    width="52px"
+                  />
+                </a>
+              </td>
+              <td>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.instagram.com/ensembl.fr"
+                  style="text-decoration: none"
+                >
+                  <img
+                    src="https://media.ensembl.fr/original/email/nl-v4/sn_icons/instagram.png"
+                    width="52px"
+                  />
+                </a>
+              </td>
+              <td>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://twitter.com/ensemblfr"
+                  style="text-decoration: none"
+                >
+                  <img
+                    src="https://media.ensembl.fr/original/email/nl-v4/sn_icons/twitter.png"
+                    width="52px"
+                  />
+                </a>
+              </td>
+            </tr>
+          </table>
+          <!-- /A TRES VITE SUR LE RESEAU ENSEMBL' -->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table style="text-align: center; margin: 20px auto">
+            <tr>
+              <td style="text-align: center">
+                <a href="#" style="text-decoration: none; margin: 0px 20px">
+                  <img
+                    src="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/bouton_android.png"
+                  />
+                </a>
+                <a href="#" style="text-decoration: none; margin: 0px 20px">
+                  <img
+                    src="https://media.ensembl.fr/original/email/trigger-ensembl-new-demand/bouton_apple.png"
+                  />
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <!-- FOOTER -->
+          <table
+            style="
+              font-family: 'Work Sans', sans-serif;
+              width: 100%;
+              text-align: center;
+              color: #747474;
+              font-size: 12px;
+              text-transform: uppercase;
+            "
+          >
+            <tr>
+              <td>
+                <p style="font-weight: 700">
+                  Nous vous adressons cet email pour vous informer des dernières
+                  publications, des nouveaux voisins et des nouveaux événements
+                  de votre quartier sur
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="{{BaseUrl}}?t={{RecipientToken}}"
+                    >ensembl.fr
+                  </a>
+                </p>
+                <p style="font-weight: 700">
+                  Vous ne souhaitez pas recevoir d'emails ? Vous pouvez vous
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="{{BaseUrl}}/mon-profil/settings?t={{RecipientToken}}"
+                    >désinscrire.
+                  </a>
+                </p>
+                <br />
+                <span style="font-family: 400">
+                  <b>
+                    Copyright © 2022 Le Résidentiel Numérique, Tous droits
+                    réservés.
+                  </b>
+                  <br />
+                  <i>
+                    Le Résidentiel Numérique 168-170, rue Victor Hugo
+                    Levallois-Perret 92300 France
+                  </i>
+                </span>
+              </td>
+            </tr>
+          </table>
+          <!-- /FOOTER -->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
