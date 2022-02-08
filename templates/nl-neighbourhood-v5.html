@@ -151,7 +151,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   width="640"
-                  style="text-align: center; margin: auto; margin-bottom: 20px"
+                  style="text-align: center; margin: auto; margin-bottom: 30px"
                 >
                   <tr>
                     <td width="46">
@@ -177,7 +177,7 @@
                   width="680"
                   cellpadding="0"
                   cellspacing="0"
-                  style="text-align: center; margin: auto"
+                  style="text-align: center; margin: auto; margin-bottom: 20px"
                 >
                   <tr>
                     <td
@@ -276,9 +276,9 @@
                                 <td>
                                   <img
                                     width="15"
-                                    src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{Demands.0.category.translation}}.jpg"
+                                    src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{Demands.0.category.name}}.jpg"
                                   />
-                                  {{Demands.0.category.name}}
+                                  {{Demands.0.category.translation}}
                                 </td>
                               </tr>
                             </table>
@@ -315,7 +315,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   width="640"
-                  style="text-align: center; margin: 20px auto"
+                  style="text-align: center; margin: auto; margin-bottom: 30px"
                 >
                   <tr>
                     <td width="46">
@@ -339,7 +339,7 @@
                 <table
                   cellspacing="0"
                   cellpadding="0"
-                  style="width: 680px; margin: auto"
+                  style="width: 680px; margin: auto; margin-bottom: 20px"
                 >
                   <tr>
                     <td
@@ -436,7 +436,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   width="640"
-                  style="text-align: center; margin: 20px auto"
+                  style="text-align: center; margin: auto; margin-bottom: 30px"
                 >
                   <tr>
                     <td>
@@ -572,12 +572,19 @@
                                       "
                                     >
                                       <tr>
-                                        <td>
+                                        <td
+                                          style="
+                                            width: 15px;
+                                            vertical-align: middle;
+                                          "
+                                        >
                                           <img
                                             width="15"
-                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.translation}}.jpg"
+                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{this.category.name}}.jpg"
                                           />
-                                          {{this.category.name}}
+                                        </td>
+                                        <td style="vertical-align: middle">
+                                          {{this.category.translation}}
                                         </td>
                                       </tr>
                                     </table>
@@ -593,12 +600,19 @@
                                       "
                                     >
                                       <tr>
-                                        <td>
+                                        <td
+                                          style="
+                                            width: 15px;
+                                            vertical-align: middle;
+                                          "
+                                        >
                                           <img
                                             width="15"
-                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{Demands.0.category.translation}}.jpg"
+                                            src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/green/{{this.category.name}}.jpg"
                                           />
-                                          {{this.category.name}}
+                                        </td>
+                                        <td style="vertical-align: middle">
+                                          {{this.category.translation}}
                                         </td>
                                       </tr>
                                     </table>
@@ -717,7 +731,7 @@
                     style="
                       width: 640px;
                       margin: 0px auto;
-                      margin-bottom: 20px;
+                      margin-bottom: 40px;
                       text-align: center;
                       border-radius: 10px;
                       border: 1px solid #1a95c2;
@@ -746,7 +760,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   width="640"
-                  style="text-align: center; margin: 30px auto"
+                  style="text-align: center; margin: auto; margin-bottom: 40px"
                 >
                   <tr>
                     <td>
@@ -779,7 +793,7 @@
                       <table
                         cellpadding="0"
                         cellspacing="0"
-                        style="width: 330px; float: left; margin: 5px 0px"
+                        style="width: 330px; float: left"
                       >
                         <tr>
                           <td>
@@ -805,18 +819,25 @@
                                   <td
                                     background="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/middle.jpg"
                                     style="
-                                      padding: 10px 30px 10px 30px;
+                                      padding: 5px 25px;
                                       background-image: url(https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/neighbour/middle.jpg);
                                     "
                                   >
-                                    <table cellpadding="5px" cellspacing="5px">
+                                    <table
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      style="width: 100%"
+                                    >
                                       <tr>
                                         <td>
-                                          <table>
+                                          <table style="width: 100%">
                                             <tr>
                                               {{#if this.avatar.url.large}}
                                               <td rowspan="2" width="64px">
-                                                <table>
+                                                <table
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                >
                                                   <tr>
                                                     <td
                                                       style="
@@ -833,7 +854,10 @@
                                               </td>
                                               {{else}}
                                               <td rowspan="2" width="64px">
-                                                <table>
+                                                <table
+                                                  cellpadding="0"
+                                                  cellspacing="0"
+                                                >
                                                   <tr>
                                                     <td
                                                       style="
@@ -884,7 +908,7 @@
                                                     >
                                                       <img
                                                         width="15"
-                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.need.0.translation}}.jpg"
+                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{this.categories.need.0.name}}.jpg"
                                                       />
                                                     </td>
                                                     {{/if}} {{#if
@@ -914,7 +938,7 @@
                                                     >
                                                       <img
                                                         width="15"
-                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5/700px/icons/orange/{{this.categories.offer.1.translation}}.jpg"
+                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{this.categories.offer.1.name}}.jpg"
                                                       />
                                                     </td>
                                                     {{/if}} {{#if
@@ -941,21 +965,25 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <table style="width: 100%">
+                                          <table
+                                            style="
+                                              width: 100%;
+                                              font-size: 12px;
+                                              font-weight: 700;
+                                              text-transform: uppercase;
+                                              color: white;
+                                            "
+                                          >
                                             <tr>
                                               {{#if this.categories.need}}
                                               <td
                                                 style="
                                                   background-color: #24acac;
                                                   border-radius: 4px;
-                                                  color: white;
                                                   text-align: center;
                                                   padding: 15px 17px;
-                                                  margin: 5px 0px;
                                                   width: 50%;
-                                                  font-size: 10px;
-                                                  font-weight: 700;
-                                                  text-transform: uppercase;
+                                                  height: 30px;
                                                 "
                                               >
                                                 Proposer de l'aide
@@ -966,14 +994,10 @@
                                                 style="
                                                   background-color: #f19101;
                                                   border-radius: 4px;
-                                                  color: white;
                                                   text-align: center;
                                                   padding: 15px 17px;
-                                                  margin: 5px 0px;
                                                   width: 50%;
-                                                  font-size: 10px;
-                                                  font-weight: 700;
-                                                  text-transform: uppercase;
+                                                  height: 30px;
                                                 "
                                               >
                                                 Demander de l'aide
@@ -1011,6 +1035,7 @@
                     style="
                       width: 640px;
                       margin: 0px auto;
+                      margin-top: 10px;
                       margin-bottom: 40px;
                       text-align: center;
                       border-radius: 10px;
