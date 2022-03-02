@@ -9,10 +9,6 @@
     <title>Newsletter Ensembl'</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;600;700;800&display=swap"
-      rel="stylesheet"
-    /> -->
   </head>
   <body style="margin: 0; padding: 0; background-color: #eeeeee">
     <table
@@ -109,6 +105,7 @@
                           margin-top: 0px;
                           margin-bottom: 20px;
                           color: white;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
                         "
                       >
                         Le réseau social de votre ville
@@ -125,6 +122,7 @@
                             padding: 8px 16px;
                             border-radius: 8px;
                             color: white;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif;
                           "
                         >
                           <tr>
@@ -160,8 +158,14 @@
                         width="46px"
                       />
                     </td>
-                    <td>
-                      <h1 style="margin: 0px; color: black">
+                    <td style="width: 100%">
+                      <h1
+                        style="
+                          margin: 0px;
+                          color: black;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
                         Votre ville a besoin de vous !
                       </h1>
                     </td>
@@ -198,6 +202,7 @@
                                 font-size: 24px;
                                 color: white;
                                 margin: 15px auto 0px auto;
+                                font-family: Verdana, Geneva, Tahoma, sans-serif;
                               "
                             >
                               Offrez un peu de temps pour aider <br />
@@ -248,6 +253,7 @@
                                 margin: 0;
                                 line-height: 19px;
                                 color: black;
+                                font-family: Verdana, Geneva, Tahoma, sans-serif;
                               "
                             >
                               {{Demands.0.needer.name}} {{#if
@@ -278,7 +284,13 @@
                                     width="15"
                                     src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{Demands.0.category.name}}.jpg"
                                   />
-                                  {{Demands.0.category.translation}}
+                                  <span
+                                    style="
+                                      font-family: Verdana, Geneva, Tahoma,
+                                        sans-serif;
+                                    "
+                                    >{{Demands.0.category.translation}}</span
+                                  >
                                 </td>
                               </tr>
                             </table>
@@ -296,6 +308,7 @@
                             text-transform: uppercase;
                             font-size: 14px;
                             margin: 0px auto 23px auto;
+                            font-family: Verdana, Geneva, Tahoma, sans-serif;
                           "
                         >
                           <tr>
@@ -324,8 +337,16 @@
                         width="46px"
                       />
                     </td>
-                    <td>
-                      <h1 style="margin: 0px; color: black">Actualités</h1>
+                    <td style="width: 100%">
+                      <h1
+                        style="
+                          margin: 0px;
+                          color: black;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
+                        Actualités
+                      </h1>
                     </td>
                     <td width="46">
                       <img
@@ -386,11 +407,24 @@
                       style="padding: 25px 45px; text-align: center"
                     >
                       {{#if Pushes.0.title }}
-                      <h3 style="margin-top: 0px; color: black">
+                      <h3
+                        style="
+                          margin-top: 0px;
+                          color: black;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
                         {{Pushes.0.title}}
                       </h3>
                       {{/if}} {{#if Pushes.0.text }}
-                      <p style="color: black">{{Pushes.0.text}}</p>
+                      <p
+                        style="
+                          color: black;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
+                        {{Pushes.0.text}}
+                      </p>
                       {{/if}}
                       <a
                         href="{{BaseUrl}}/actualites?t={{RecipientToken}}&utm_medium=email&utm_source=mandrill&utm_campaign=newsletter_neighborhood"
@@ -414,7 +448,13 @@
                           "
                         >
                           <tr>
-                            <td>Voir plus</td>
+                            <td
+                              style="
+                                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                              "
+                            >
+                              Voir plus
+                            </td>
                           </tr>
                         </table>
                       </a>
@@ -445,8 +485,14 @@
                         width="46px"
                       />
                     </td>
-                    <td>
-                      <h1 style="margin: 0px; color: black">
+                    <td style="width: 100%">
+                      <h1
+                        style="
+                          margin: 0px;
+                          color: black;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
                         Du nouveau sur le réseau
                       </h1>
                     </td>
@@ -518,6 +564,8 @@
                                         margin: 0;
                                         font-size: 16px;
                                         color: black;
+                                        font-family: Verdana, Geneva, Tahoma,
+                                          sans-serif;
                                       "
                                     >
                                       {{this.publisher.name}}, {{#if
@@ -531,6 +579,8 @@
                                         color: #f19101;
                                         font-size: 12px;
                                         font-weight: bold;
+                                        font-family: Verdana, Geneva, Tahoma,
+                                          sans-serif;
                                       "
                                     >
                                       Demande un coup de main
@@ -542,6 +592,8 @@
                                         color: #24acac;
                                         font-size: 12px;
                                         font-weight: bold;
+                                        font-family: Verdana, Geneva, Tahoma,
+                                          sans-serif;
                                       "
                                     >
                                       Propose de l'aide
@@ -553,6 +605,8 @@
                                         color: #1a95c2;
                                         font-size: 12px;
                                         font-weight: bold;
+                                        font-family: Verdana, Geneva, Tahoma,
+                                          sans-serif;
                                       "
                                     >
                                       Publie une information
@@ -583,7 +637,13 @@
                                             src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{this.category.name}}.jpg"
                                           />
                                         </td>
-                                        <td style="vertical-align: middle">
+                                        <td
+                                          style="
+                                            vertical-align: middle;
+                                            font-family: Verdana, Geneva, Tahoma,
+                                              sans-serif;
+                                          "
+                                        >
                                           {{this.category.translation}}
                                         </td>
                                       </tr>
@@ -611,7 +671,13 @@
                                             src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/green/{{this.category.name}}.jpg"
                                           />
                                         </td>
-                                        <td style="vertical-align: middle">
+                                        <td
+                                          style="
+                                            vertical-align: middle;
+                                            font-family: Verdana, Geneva, Tahoma,
+                                              sans-serif;
+                                          "
+                                        >
                                           {{this.category.translation}}
                                         </td>
                                       </tr>
@@ -621,7 +687,13 @@
                                 </tr>
                                 <tr>
                                   <td colspan="3" style="padding: 20px 0px">
-                                    <span style="color: #727272">
+                                    <span
+                                      style="
+                                        color: #727272;
+                                        font-family: Verdana, Geneva, Tahoma,
+                                          sans-serif;
+                                      "
+                                    >
                                       {{this.text}}
                                     </span>
                                   </td>
@@ -654,7 +726,12 @@
                                       "
                                     >
                                       <tr>
-                                        <td>
+                                        <td
+                                          style="
+                                            font-family: Verdana, Geneva, Tahoma,
+                                              sans-serif;
+                                          "
+                                        >
                                           Proposer mon aide à
                                           {{this.publisher.name}}
                                         </td>
@@ -675,7 +752,12 @@
                                       "
                                     >
                                       <tr>
-                                        <td>
+                                        <td
+                                          style="
+                                            font-family: Verdana, Geneva, Tahoma,
+                                              sans-serif;
+                                          "
+                                        >
                                           Demander de l'aide à
                                           {{this.publisher.name}}
                                         </td>
@@ -696,7 +778,12 @@
                                       "
                                     >
                                       <tr>
-                                        <td>
+                                        <td
+                                          style="
+                                            font-family: Verdana, Geneva, Tahoma,
+                                              sans-serif;
+                                          "
+                                        >
                                           Voir la publication de
                                           {{this.publisher.name}}
                                         </td>
@@ -744,9 +831,17 @@
                   >
                     <tr>
                       {{#if `PublicationCount > 1`}}
-                      <td>Voir {{PublicationCount}} publications de plus</td>
+                      <td
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+                      >
+                        Voir {{PublicationCount}} publications de plus
+                      </td>
                       {{else}}
-                      <td>Voir 1 publication de plus</td>
+                      <td
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+                      >
+                        Voir 1 publication de plus
+                      </td>
                       {{/if}}
                     </tr>
                   </table>
@@ -769,8 +864,14 @@
                         width="46px"
                       />
                     </td>
-                    <td>
-                      <h1 style="margin: 0px; color: black">
+                    <td style="width: 100%">
+                      <h1
+                        style="
+                          margin: 0px;
+                          color: black;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
                         Vous pouvez vous entraider
                       </h1>
                     </td>
@@ -879,6 +980,8 @@
                                                     margin: 0px;
                                                     font-size: 14px;
                                                     color: black;
+                                                    font-family: Verdana, Geneva,
+                                                      Tahoma, sans-serif;
                                                   "
                                                 >
                                                   {{this.first_name}}, {{#if
@@ -908,7 +1011,7 @@
                                                     >
                                                       <img
                                                         width="15"
-                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/orange/{{this.categories.need.0.name}}.jpg"
+                                                        src="https://media.ensembl.fr/original/email/nl-neighborhood-v5.1/icons/green/{{this.categories.need.0.name}}.jpg"
                                                       />
                                                     </td>
                                                     {{/if}} {{#if
@@ -951,6 +1054,9 @@
                                                         border-radius: 27px;
                                                         color: white;
                                                         padding: 5px 7px;
+                                                        font-family: Verdana,
+                                                          Geneva, Tahoma,
+                                                          sans-serif;
                                                       "
                                                     >
                                                       ...
@@ -984,6 +1090,8 @@
                                                   padding: 15px 17px;
                                                   width: 50%;
                                                   height: 30px;
+                                                  font-family: Verdana, Geneva,
+                                                    Tahoma, sans-serif;
                                                 "
                                               >
                                                 Proposer de l'aide
@@ -998,6 +1106,8 @@
                                                   padding: 15px 17px;
                                                   width: 50%;
                                                   height: 30px;
+                                                  font-family: Verdana, Geneva,
+                                                    Tahoma, sans-serif;
                                                 "
                                               >
                                                 Demander de l'aide
@@ -1049,9 +1159,17 @@
                   >
                     <tr>
                       {{#if `NeighbourCount > 1`}}
-                      <td>Voir les {{NeighbourCount}} voisins</td>
+                      <td
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+                      >
+                        Voir les {{NeighbourCount}} voisins
+                      </td>
                       {{else}}
-                      <td>Voir 1 voisin</td>
+                      <td
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+                      >
+                        Voir 1 voisin
+                      </td>
                       {{/if}}
                     </tr>
                   </table>
@@ -1071,7 +1189,12 @@
                         margin-bottom: 16px;
                       "
                     >
-                      <h2 style="color: black">
+                      <h2
+                        style="
+                          color: black;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
                         A très vite sur le réseau Ensembl' !
                       </h2>
                     </td>
@@ -1155,7 +1278,12 @@
                         text-transform: uppercase;
                       "
                     >
-                      <p style="margin-top: 60px">
+                      <p
+                        style="
+                          margin-top: 60px;
+                          font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        "
+                      >
                         Copyright © 2022 Le Résidentiel Numérique, All rights
                         reserved.<br />Vous recevez cette email car vous êtes
                         inscrit sur
@@ -1167,12 +1295,20 @@
                           ensembl.fr
                         </a>
                       </p>
-                      <p>
+                      <p
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+                      >
                         Notre adresse : <br />Le Résidentiel Numérique 168-170,
                         rue Victor Hugo Levallois-Perret 92300 France
                       </p>
-                      <p>Ajoutez-nous à votre carnet d'adresses</p>
-                      <p>
+                      <p
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+                      >
+                        Ajoutez-nous à votre carnet d'adresses
+                      </p>
+                      <p
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+                      >
                         Vous ne souhaitez pas recevoir d'emails ? Vous pouvez
                         vous
                         <a
